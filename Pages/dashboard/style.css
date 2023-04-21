@@ -1,8 +1,16 @@
-
+:root
+{
+    --backgroung : rgb(27, 27, 27);
+    --fb_blue : rgb(73, 119, 247);
+    --header_color  : rgb(39, 39, 39);
+    --font-color : rgb(212, 209, 209);
+    --user-icon : white;
+    --user-background : rgba(212, 212, 212, 0.884); 
+}
 
 body
 {
-    background-color: rgb(27, 27, 27);
+    background-color: var(--backgroung);
 }
 header
 {
@@ -12,7 +20,7 @@ header
     top: 0;
     border-bottom: .1px solid white;
     position: fixed;
-    background-color: rgb(39, 39, 39);
+    background-color: var(--header_color);
     
 }
 .logo-container
@@ -22,7 +30,7 @@ header
     width: 50px;
     border-radius: 25px;
     left: 0%;
-    background-color: rgb(73, 119, 247);
+    background-color: var(--fb_blue)
 }
 .list-container
 {
@@ -36,7 +44,7 @@ header
     justify-content: center;
     
 }
-.list-container ul 
+ul 
 {
     position: absolute;
     display: flex;
@@ -49,13 +57,13 @@ header
 {
     display: flex;
     margin-right: 10px;
-    font-size: 30px;
+    font-size: 25px;
     margin-top: 10px;
 } 
-.list-container ul li a
+ ul li a
 {
     font-style: none;
-    color: rgb(212, 209, 209);
+    color: var(--font-color);
     height: 38px;
     width: 60px;
     
@@ -63,6 +71,38 @@ header
 }
 #home
 {
-    color: rgb(73, 119, 247);
-    border-bottom: 4px solid rgb(73, 119, 247);
+    color: var(--fb_blue);
+    border-bottom: 4px solid var(--fb_blue);
+}
+.second-list
+{
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    top: 0;
+    right: 10px;
+    display: flex;
+    text-align: right;
+    justify-content: right;
+    
+}
+.second-list ul li
+{
+    display: flex;
+}
+button
+{
+    background-color: var(--backgroung);
+    border: none;
+    font-size: 25px;
+    color: var(--font-color);
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    margin-left: 1px;   
+}
+#user-home
+{
+    background-color: var(--user-background);
+    color: var(--user-icon);
 }
