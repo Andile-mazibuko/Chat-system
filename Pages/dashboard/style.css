@@ -11,6 +11,7 @@
 body
 {
     background-color: var(--backgroung);
+    
 }
 header
 {
@@ -69,6 +70,12 @@ ul
     
    
 }
+/*.list-container ul li a:active
+{
+    color: var(--fb_blue);
+    border-bottom: 4px solid var(--fb_blue);
+
+}*/
 #home
 {
     color: var(--fb_blue);
@@ -105,4 +112,56 @@ button
 {
     background-color: var(--user-background);
     color: var(--user-icon);
+}
+
+
+.left-side
+{
+    position: fixed;
+    height: 95%;
+    width: 20%;
+    background-color: #fff;
+    bottom: 0;
+}
+.container
+{
+    height: 95%;
+    position: absolute;
+    width: 78%;
+    right: 0;
+    bottom: -2%;
+    background-color: #fff;
+}
+.stories-container
+{
+    background-color: var(--header_color);
+    width: 50%;
+    height: 30%;
+    left: 11%;
+    border-radius: 10px;
+    position: absolute;
+
+}
+.stories-container button
+{
+    width: 49%;
+    height: 20%;
+    font-size: 20px;
+    background-color: transparent;
+}
+.stories-container button:hover
+{
+    background-color: grey;
+}
+.stories
+{
+    background-color: red;
+    width: 100%;
+    height: 70%;
+}
+.create-story
+{
+    height: 100%;
+    width: 20%;
+    background-color: black;
 }
