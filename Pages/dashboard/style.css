@@ -158,10 +158,25 @@ button
     background-color: red;
     width: 100%;
     height: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    overflow-x: scroll;
 }
-.create-story
+/*.create-story
 {
     height: 100%;
     width: 20%;
+    border-radius: 10px;
     background-color: black;
+    position: relative;
+   
+}*/
+.story
+{
+    height: 100%;
+    width: 20%;
+    border-radius: 10px;
+    background-color: black;
+    position: relative;
 }
