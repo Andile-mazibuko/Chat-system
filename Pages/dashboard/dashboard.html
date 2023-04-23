@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="body" class="body">
     <header>
         <div class="logo-container">
 
@@ -60,6 +60,7 @@
 
     </div>
     <div class="container">
+        
         <div class="stories-container">
             <button><i class="fa-sharp fa-solid fa-book-open"></i>  stories</button>
             <button><i class="fa-regular fa-clapperboard-play"></i>  Reels</button>
@@ -133,6 +134,20 @@
                 <button ><i class="fa-regular fa-face-smile" style="color: #eacb06;"></i> Live Video</button>
             </a>
         </div>
+        
+        <div class="make-post create-post-popup" id="post-visibility">
+            <h1>Create post</h1>
+                <hr>
+            <div class="create-post-pp">
+                <img src="user-solid.svg" alt="">
+            </div><h2>Andile Mazibuko</h2> 
+            <form action="">
+                <input type="text" name="post-content" placeholder="What's on your mind, Andile?" class="post-cont">
+                <hr>
+                <button type="submit" value="">Post</button>
+            </form> 
+        </div>
+        
         <div class="posts">
             <div class="post pic" id="with_pic"></div>
             <div class="post pic" id="with_pic"></div>
@@ -141,11 +156,22 @@
             <div class="post pic" id="with_pic"></div>
             
         </div>
+        
 
     </div>
     
 
-    
+    <script type="text/javascript">
+        function showPopUp()
+        {
+            let makePost = document.getElementById("post-visibility");
+           // let body = document.getElementById("body");
+            
+            makePost.classList.toggle("post-invisible");
+            //body.classList.toggle(".body-invisible");
+        }
+        
+    </script>
     
     <footer></footer>
 </body>

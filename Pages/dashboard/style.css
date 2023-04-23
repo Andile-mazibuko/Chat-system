@@ -8,10 +8,14 @@
     --user-background : rgba(212, 212, 212, 0.884); 
 }
 
-body
+.body
 {
     background-color: var(--backgroung);
     
+}
+.body-invisible
+{
+    opacity: 0.1;
 }
 header
 {
@@ -227,6 +231,69 @@ button
     border-radius: 10px;
     position: relative;
 
+}
+.create-post-popup
+{
+    width: 40%;
+    height: 15%;
+    background-color: var(--backgroung);
+    left: 15.5%;
+    top: 5%;
+    visibility: hidden;
+    z-index: 1;
+}
+.create-post-pp
+{
+    background-color: var(--user-background);
+    width: 10%;
+    height: 20%;
+    border-radius: 100px;
+    overflow: hidden;
+}
+.create-post-popup form
+{
+    height: 65%;
+}
+.create-post-popup form button
+{
+    width: 98%;
+    border-radius: 5px;
+    margin-left: 1%;
+    background-color: var(--fb_blue);
+
+}
+.post-cont
+{
+    display: flex;
+    justify-content: flex-start;
+    width: 99%;
+    height: 50%;
+    background-color: var(--backgroung);
+    color: var(--font-color);
+    border: none;
+    
+}
+.create-post-pp img
+{
+    height: 100%;
+    width: 100%;
+    color: aliceblue;
+}
+.post-invisible
+{
+    visibility: visible;
+}
+.create-post-popup h1
+{
+    text-align: center;
+    color: var(--font-color);
+}
+.create-post-popup h2
+{
+    left: 12%;
+    top: 15%;
+    position: absolute;
+    color: var(--font-color);
 }
 .post-pp
 {
