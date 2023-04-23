@@ -257,6 +257,27 @@ button
     font-size: 20px;
     text-align: left;
 }
+.post-type
+{
+    position: relative;
+    width: 33.33%;
+    background-color: transparent;
+    text-decoration: none;
+    margin-left: 10px;
+}
+.post-type button
+{
+    position: inherit;
+    width: 30%;
+    font-size: 18px;
+    background-color: transparent;
+    cursor: pointer;
+}
+.post-type button:hover
+{
+    background-color: var(--backgroung);
+    border-radius: 5px;
+}
 .posts
 {
     width: 61%;
