@@ -20,7 +20,7 @@
 header
 {
     width: 100%;
-    height: 5%;
+    height: 7%;
     left: 0;
     top: 0;
     border-bottom: .1px solid white;
@@ -90,7 +90,7 @@ ul
     position: absolute;
     width: 30%;
     height: 100%;
-    top: 0;
+    top: 8%;
     right: 10px;
     display: flex;
     text-align: right;
@@ -115,7 +115,11 @@ button
 #user-home
 {
     background-color: var(--user-background);
-    color: var(--user-icon);
+    overflow: hidden;
+}
+#user-home img
+{
+    height: 100%;
 }
 
 .left-side::-webkit-scrollbar
@@ -125,7 +129,7 @@ button
 .left-side
 {
     position: fixed;
-    height: 95%;
+    height: 93%;
     width: 20%;
     bottom: 0;
     overflow-y: scroll;
@@ -164,7 +168,7 @@ button
     position: absolute;
     width: 78%;
     right: 0;
-    top: 6%;
+    top: 8%;
     
 }
 .stories-container
@@ -230,8 +234,10 @@ button
     top: 15.5%;
     border-radius: 10px;
     position: relative;
-
+    z-index: -1;
+    
 }
+
 .create-post-popup
 {
     width: 40%;
@@ -240,7 +246,7 @@ button
     left: 15.5%;
     top: 5%;
     visibility: hidden;
-    z-index: 1;
+    
 }
 .create-post-pp
 {
@@ -308,11 +314,12 @@ button
     position: inherit;
     background-color: var(--user-background);   
     color: var(--user-icon);
+    overflow: hidden;
 }
-.post-pp i 
+.post-pp img
 {
-    top: 10px;
-    position: inherit;
+    width: 90%;
+    height: 100%;
 }
 .post-pop-up
 {
@@ -365,7 +372,177 @@ button
 }
 #with_pic 
 {
-    height: 40%;
+    height: 50%;
+}
+.post-owner-username
+{
+    color: var(--font-color);
+    position: absolute;
+    left: 12%;
+    top: 2%;
+}
+.time-posted
+{
+    color: var(--user-background);
+    position: absolute;
+    left: 12%;
+    top: 4%;
+}
+.pic-area
+{
+    /*background-color: var(--font-color);*/
+    height: 80%;
+    width: 96%;
+    left: 2%;
+    top: 10%;
+    position: absolute;
+
+}
+.pic-area img
+{
+    position: absolute;
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
+}
+.post-summary
+{
+    height: 4%;
+    width: 100%;
+    bottom: 6%;
+    left: 0;
+    color: var(--font-color);
+    position: absolute;
+
+}
+.post-summary span
+{
+    margin-right: 22%;
+}
+.action-buttons
+{
+    height: 6%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    
+}
+.reaction
+{
+    height: 98%;
+    width: 30%;
+    top: 1%;
+    left: 2%;
+    display: flex;
+    justify-content: center;
+    color: var(--font-color);
+    position: absolute;
+    background-color: var(--backgroung);
+
+}
+.reaction span
+{
+    margin-top: 10%;
+    margin-left: 10px;
+}
+.reaction i
+{
+    margin-top: 10%;
+}
+.comment
+{
+    background-color: var(--backgroung);
+    height: 98%;
+    width: 30%;
+    top: 1%;
+    left: 34%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    background-color: var(--backgroung);
+
+}
+.comment span
+{
+    margin-top: 10%;
+    margin-left: 10px;
+}
+.comment i
+{
+    margin-top: 10%;
+}
+.share
+{
+    height: 98%;
+    width: 30%;
+    top: 1%;
+    left: 66%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    background-color: var(--backgroung);
+
+}
+.share span
+{
+    margin-top: 10%;
+    margin-left: 10px;
+}
+.share i
+{
+    margin-top: 10%;
+}
+
+.react-btns
+{
+    height: 100%;
+    width: 50%;
+    bottom: 90%;
+    position: absolute;
+    background-color: var(--backgroung);
+    z-index: 5;
+    border-radius: 2px;
+    left: 25%;
+    visibility: hidden;
+}
+.react-btns form
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.react-btns form button
+{
+    position: relative;
+    height: 36px;
+    width: 36px;
+    border-radius: 20px;
+}
+.reaction:hover .react-btns
+{
+    visibility: visible;
+}
+.react-btns:hover
+{
+    background-color: #fff;
+}
+
+
+
+a 
+{
+    color: var(--font-color);
+    text-decoration: none;
+}
+a:visited
+{
+    color: var(--font-color);
+    text-decoration: none;
 }
 @media (max-width:858px)
 {
