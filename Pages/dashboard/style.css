@@ -165,11 +165,18 @@ button
 .container
 {
     height: 200%;
-    position: absolute;
+    position: fixed;
     width: 78%;
     right: 0;
     top: 8%;
+    overflow: hidden;
+    overflow-y: scroll;
+
     
+}
+.container::-webkit-scrollbar
+{
+    display: none;
 }
 .stories-container
 {
@@ -361,7 +368,7 @@ button
 }
 .post
 {
-    height: 10%;
+    height: 15%;
     width: 82%; 
     position: relative;
     right: 0;
@@ -373,6 +380,11 @@ button
 #with_pic 
 {
     height: 50%;
+}
+#without-pic .time-posted
+{
+    top: 15%;
+
 }
 .post-owner-username
 {
