@@ -5,7 +5,7 @@
     --header_color  : rgb(39, 39, 39);
     --font-color : rgb(212, 209, 209);
     --user-icon : white;
-    --user-background : rgba(212, 212, 212, 0.884); 
+    --user-background : rgba(179, 176, 176, 0.884); 
 }
 
 .body
@@ -95,6 +95,12 @@ ul
     display: flex;
     text-align: right;
     justify-content: right;
+    
+}
+.second-list ul li a button img
+{
+    height: 100%;
+    width: 100%;
     
 }
 .second-list ul li
@@ -200,18 +206,25 @@ button
     background-color: grey;
     border-radius: 10px;
 }
-.stories::-webkit-scrollbar
-{
-    display: none;
-}
+
 .stories
 {
     
     width: 100%;
     height: 70%;
+    
+}
+.stories form
+{
+    height: 100%;
+    width: 100%;
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
+}
+.stories form::-webkit-scrollbar
+{
+    display: none;
 }
 /*.create-story
 {
@@ -222,7 +235,18 @@ button
     position: relative;
    
 }*/
-.story
+.stories form button
+{
+    height: 100%;
+    width: 20%;
+    margin-top: 0;
+    border-radius: 10px;
+    margin-left: 5px;
+    display: inline-block;
+    background-color: black;
+    position: relative;
+}
+.stories form button:hover
 {
     height: 100%;
     width: 20%;
@@ -232,6 +256,41 @@ button
     background-color: black;
     position: relative;
 }
+
+.prof_pic
+{
+    height: 35px;
+    width: 35px;
+    border-radius: 17.5px;
+    top: 5%;
+    left: 5%;
+    position: absolute;
+    background-color: var(--user-background);
+    overflow: hidden;
+}
+.prof_pic img
+{
+    height: 100%;
+}
+
+.story-cont
+{
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    left: 0;
+    position: absolute;
+}
+.story-cont img
+{
+    height: 100%;
+    width: 100%;
+    opacity: .5;
+    border-radius: 10px;
+}
+
+
+
 .make-post
 {
     background-color: var(--header_color);
@@ -404,9 +463,13 @@ button
 {
     /*background-color: var(--font-color);*/
     height: 80%;
-    width: 96%;
-    left: 2%;
+    width: 80%;
+    left: 10%;
     top: 10%;
+    justify-content: center;
+    text-align: center;
+    
+    background-color: #fff;
     position: absolute;
 
 }
@@ -416,8 +479,6 @@ button
     width: auto;
     height: 100%;
     display: flex;
-    justify-content: center;
-    text-align: center;
     
 }
 .post-summary
