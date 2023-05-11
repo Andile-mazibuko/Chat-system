@@ -310,9 +310,9 @@ button
     height: 15%;
     background-color: var(--backgroung);
     left: 15.5%;
-    top: 5%;
+    top: 3%;
     visibility: hidden;
-    
+    z-index: 5;
 }
 .create-post-pp
 {
