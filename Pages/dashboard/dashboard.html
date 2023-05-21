@@ -28,7 +28,7 @@
         <div class="second-list">
             <ul>
                 <li><a href="#" id="messenger"><button><i class="fa-regular fa-grid"></i></button></a></li>
-                <li><a href="#" id=""><button><i class="fa-brands fa-facebook-messenger"></i></button></a></li>
+                <li><a href="#" id=""><button onclick="setMessegesVisible()"><i class="fa-brands fa-facebook-messenger"></i></button></a></li>
                 <li><a href="#" id="notificarions"><button><i class="fa-solid fa-bell"></i></button></a></li>
                 <li><a href="#" ><button id="user-home"><img src="user.png" alt=""></button></a></li>
             </ul>
@@ -62,8 +62,8 @@
     <div class="container">
         
         <div class="stories-container">
-            <button><i class="fa-sharp fa-solid fa-book-open"></i>  stories</button>
-            <button><i class="fa-regular fa-clapperboard-play"></i>  Reels</button>
+            <button class="btn-story"><i class="fa-sharp fa-solid fa-book-open"></i>  stories</button>
+            <button class="btn-reel"><i class="fa-regular fa-clapperboard-play"></i>  Reels</button>
             <hr>
             
             <div class="stories">
@@ -351,6 +351,11 @@
                     <span>296</span> <span>6 comments</span><span>2 shares</span>
                 </div>
                 <div class="action-buttons">
+                    
+                    <div class="reaction">
+                        <a href="#"><i class="fa-solid fa-thumbs-up" style="color: #fbfcfe;"></i> <span>Lke</span></a>
+                        
+                    </div>
                     <div class="react-btns">
                         <form action="">
                             <button type="submit" name="reaction" value="like"><i class="fa-solid fa-thumbs-up" style="color: rgb(15, 15, 226);"></i></button>
@@ -358,10 +363,6 @@
                             <button type="submit" name="reaction" value="angry"><i class="fa-solid fa-face-angry" style="color: #e79118;"></i></button> 
                             <button type="submit" name="reaction" value="sad"><i class="fa-solid fa-face-sad-tear" style="color: #eca918;"></i></button>
                         </form>
-                        
-                    </div>
-                    <div class="reaction">
-                        <a href="#"><i class="fa-solid fa-thumbs-up" style="color: #fbfcfe;"></i> <span>Lke</span></a>
                         
                     </div>
                     
@@ -398,8 +399,42 @@
             <div class="post pic" id="with_pic"></div>
             
         </div>
-        
 
+    </div>
+
+    <div class="messesges" id="msgs">
+        <div class="msg_nav">
+            <h2>Chats</h2>
+            <ul>
+                <li><i class="fa-regular fa-ellipsis" style="color: #c7c7c7;"></i></i></li>
+                <li><i class="fa-solid fa-maximize" style="color: #c7c7c7;"></i></i></li>
+                <li><i class="fa-regular fa-video-plus" style="color: #a8a8a8;"></i></li>
+                <li><i class="fa-solid fa-pen-to-square" style="color: #adadad;"></i></li>
+            </ul>
+        </div>
+        <div class="msg_search">
+            <form action="" >
+                <div class="search-cont">
+                    <i class="fa-sharp fa-solid fa-magnifying-glass" style="color: #bababa;"></i>
+                    <input type="search" value="" name="search_msg">
+                </div>
+            </form>
+        </div>
+        <div class="toggle_bns">
+            <a href="">
+                <button>
+                    Inbox
+                </button>
+            </a>
+            <a href="">
+                <button>
+                    communities
+                </button>
+            </a>
+        </div>
+        <div class="user-msgs">
+            
+        </div>
     </div>
     
 
@@ -407,10 +442,17 @@
         function showPopUp()
         {
             let makePost = document.getElementById("post-visibility");
-           
+
             makePost.classList.toggle("post-invisible");
         
         }
+        function setMessegesVisible()
+        {
+            let msgs = document.getElementById("msgs");
+
+            msgs.classList.toggle("msgs_visible");
+        }
+
         
     </script>
     

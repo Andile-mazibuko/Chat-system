@@ -201,6 +201,11 @@ button
     font-size: 20px;
     background-color: transparent;
 }
+.btn-story
+{
+    color: var(--fb_blue);
+    margin-bottom: 4px solid var(--fb_blue);
+}
 .stories-container button:hover
 {
     background-color: grey;
@@ -576,8 +581,8 @@ button
     width: 50%;
     bottom: 90%;
     position: absolute;
-    background-color: var(--backgroung);
     z-index: 5;
+    background-color: var(--backgroung);
     border-radius: 2px;
     left: 25%;
     visibility: hidden;
@@ -587,6 +592,7 @@ button
     height: 100%;
     width: 100%;
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 .react-btns form button
@@ -594,9 +600,16 @@ button
     position: relative;
     height: 36px;
     width: 36px;
+    top: calc(100%-36px);
     border-radius: 20px;
 }
-.reaction:hover .react-btns
+.react-btns form button:hover
+{
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+}
+.action-buttons:hover .react-btns
 {
     visibility: visible;
 }
@@ -616,6 +629,116 @@ a:visited
 {
     color: var(--font-color);
     text-decoration: none;
+}
+.messesges
+{
+    width: 20%;
+    height: 100%;
+    border-radius: 10px;
+    top: 5%;
+    right: 2%;
+    position: fixed;
+    background-color: var(--header_color);
+    box-shadow: 0px 8px 8px 8px var(--backgroung);
+    visibility: hidden;
+}
+.msgs_visible
+{
+    visibility: visible;
+}
+
+.msg_nav
+{
+    top: 0;
+    width: 100%;
+    height: 5%;
+    position: absolute;
+    border-radius: 10px;
+}
+.msg_nav h2
+{
+    color: var(--font-color);
+    position: absolute;
+    left: 5%;
+}
+.msg_nav ul
+{
+    display: flex;
+    float: right;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: -20%;
+    right: 0;
+
+}
+.msg_nav ul li
+{
+    display: flex;
+    margin: 3%;
+    font-size: 30px;
+}
+.msg_search
+{
+    height: 5%;
+    width: 90%;
+    position: absolute;
+    left: 5%;
+    top: 6%;
+
+}
+.msg_search form
+{
+    height: 100%;
+    width: 100%;
+
+
+}
+.msg_search form .search-cont
+{
+    height: 100%;
+    width: 100%;
+    background-color: var(--backgroung);
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+}
+.search-cont i
+{
+    font-size: 30px;
+    position: absolute;
+    left: 5%;
+    margin-right: 10%;
+}
+.search-cont input
+{
+    position: absolute;
+    height: 100%;
+    top: 0;
+    width: 80%;
+    right: 0;
+    font-size: 15px;
+    color: var(--font-color);
+    background-color: transparent;
+    border-radius: 100px;
+    outline: none;
+    border: none;
+    
+}
+.messesges .toggle_bns
+{
+    position: absolute;
+    top:12%;
+    height: 5%;
+    width: 100%;
+}
+
+.messesges .toggle_bns a button
+{
+    width: auto;
+    font-size: 15px;
+    height: 80%;
+    margin-left: 2%;
 }
 @media (max-width:858px)
 {
