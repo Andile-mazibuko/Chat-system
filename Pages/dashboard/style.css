@@ -74,6 +74,12 @@ ul
     
    
 }
+.msg-btn-active
+{
+    background-color: var(--fb_blue);
+    color: blue;
+    opacity: .5;
+}
 /*.list-container ul li a:active
 {
     color: var(--fb_blue);
@@ -103,9 +109,18 @@ ul
     width: 100%;
     
 }
+.second-list ul li a img
+{
+    height: 100%;
+    width: 100%;
+}
 .second-list ul li
 {
     display: flex;
+}
+button
+{
+    overflow: hidden;
 }
 button
 {
@@ -318,6 +333,19 @@ button
     top: 3%;
     visibility: hidden;
     z-index: 5;
+}
+.create-post-popup .cancel
+{
+    background-color: var(--header_color);
+    color: var(--font-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 5%;
+    top: 3%;
+    width: 40px;
+    height: 40px;
 }
 .create-post-pp
 {
@@ -624,11 +652,20 @@ a
 {
     color: var(--font-color);
     text-decoration: none;
+    cursor: pointer;
 }
 a:visited
 {
     color: var(--font-color);
     text-decoration: none;
+}
+li
+{
+    cursor: pointer;
+}
+button
+{
+    cursor: pointer;
 }
 .messesges
 {
@@ -819,6 +856,63 @@ a:visited
     border-radius: 8px;
     bottom: auto;
     right: 5%;
+}
+.right-side
+{
+    position: fixed;
+    height: 92%;
+    width: 15%;
+    background-color: var(--header_color);
+    right: 0;
+    overflow: hidden;
+    overflow-y: scroll;
+    bottom: 0;
+}
+.right-side::-webkit-scrollbar
+{
+    display: none;
+}
+.adds-area
+{
+    height: 30%;
+    width: 100%;
+}
+
+.birthday-area
+{
+    height: 10%;
+    width: 100%;
+   
+}
+.birthday-area img
+{
+    height: 30%;
+    width: auto;
+    margin-left: 10%;
+    margin-top: 5%;
+    top: auto;
+}
+.birthday-area span
+{
+    color: var(--font-color);
+}
+.right-side .friends
+{
+    height: 70%;
+    width: 100%;
+    opacity: .5;
+}
+.friends .user_msg_container span
+{
+    left: 30%;
+    position: absolute;
+
+}
+hr
+{
+    border: 1px solid grey;
+    width: 90%;
+    margin-top: 2%;
 }
 @media (max-width:858px)
 {

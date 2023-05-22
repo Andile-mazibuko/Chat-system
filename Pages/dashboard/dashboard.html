@@ -27,8 +27,8 @@
         </div>
         <div class="second-list">
             <ul>
-                <li><a href="#" id="messenger"><button><i class="fa-regular fa-grid"></i></button></a></li>
-                <li><button onclick="setMessegesVisible()"><i class="fa-brands fa-facebook-messenger"></i></button></li>
+                <li><a href="#" id="messenger"><button><img src="menu.svg" alt=""></button></a></li>
+                <li><button onclick="setMessegesVisible()" id="msg-btn"><i class="fa-brands fa-facebook-messenger"></i></button></li>
                 <li><a href="#" id="notificarions"><button><i class="fa-solid fa-bell"></i></button></a></li>
                 <li><a href="#" ><button id="user-home"><img src="user.png" alt=""></button></a></li>
             </ul>
@@ -176,6 +176,7 @@
         
         <div class="make-post create-post-popup" id="post-visibility">
             <h1>Create post</h1>
+            <button class="cancel" onclick="showPopUp()">x</button>
                 <hr>
             <div class="create-post-pp">
                 <img src="user.png" alt="">
@@ -401,6 +402,174 @@
         </div>
 
     </div>
+    <div class="right-side">
+        <div class="adds-area">
+            <div class="advert">
+
+            </div>
+        </div>
+        <hr>
+        <div class="birthday-area">
+            <img src="gift.png" alt="">
+            <span> 2 friends with birthdays today</span>
+        </div>
+        <hr>
+        <div class="friends">
+            <form action="">
+            
+                <!--Start-->
+                <button type="submit" class="user_msg_container">
+                    <div class="post-pp">
+                        <img src="user.png" alt="">
+                    </div> 
+                    
+                    <span class="msg_sender">
+                        <b>Andile Mazibuko</b>
+                    </span>
+                
+                </button>
+
+                
+                <button type="submit" class="user_msg_container">
+                    <div class="post-pp">
+                        <img src="user.png" alt="">
+                    </div> 
+                    
+                    <span class="msg_sender">
+                        <b>Andile Mazibuko</b>
+                    </span>
+                
+                </button>
+
+                
+                <button type="submit" class="user_msg_container">
+                    <div class="post-pp">
+                        <img src="user.png" alt="">
+                    </div> 
+                    
+                    <span class="msg_sender">
+                        <b>Andile Mazibuko</b>
+                    </span>
+                
+                </button>
+
+                
+                <button type="submit" class="user_msg_container">
+                    <div class="post-pp">
+                        <img src="user.png" alt="">
+                    </div> 
+                    
+                    <span class="msg_sender">
+                        <b>Andile Mazibuko</b>
+                    </span>
+                
+                </button>
+
+                
+                <button type="submit" class="user_msg_container">
+                    <div class="post-pp">
+                        <img src="user.png" alt="">
+                    </div> 
+                    
+                    <span class="msg_sender">
+                        <b>Andile Mazibuko</b>
+                    </span>
+                
+                </button>
+
+                
+                <button type="submit" class="user_msg_container">
+                    <div class="post-pp">
+                        <img src="user.png" alt="">
+                    </div> 
+                    
+                    <span class="msg_sender">
+                        <b>Andile Mazibuko</b>
+                    </span>
+                
+                </button>
+
+                
+                <button type="submit" class="user_msg_container">
+                    <div class="post-pp">
+                        <img src="user.png" alt="">
+                    </div> 
+                    
+                    <span class="msg_sender">
+                        <b>Andile Mazibuko</b>
+                    </span>
+                
+                </button>
+
+                
+                <button type="submit" class="user_msg_container">
+                    <div class="post-pp">
+                        <img src="user.png" alt="">
+                    </div> 
+                    
+                    <span class="msg_sender">
+                        <b>Andile Mazibuko</b>
+                    </span>
+
+                </button>
+
+                
+                <button type="submit" class="user_msg_container">
+                    <div class="post-pp">
+                        <img src="user.png" alt="">
+                    </div> 
+                    
+                    <span class="msg_sender">
+                        <b>Andile Mazibuko</b>
+                    </span>
+                
+                </button>
+                
+                <button type="submit" class="user_msg_container">
+                    <div class="post-pp">
+                        <img src="user.png" alt="">
+                    </div> 
+                    
+                    <span class="msg_sender">
+                        <b>Andile Mazibuko</b>
+                    </span>
+                
+                </button>
+                
+                <button type="submit" class="user_msg_container">
+                    <div class="post-pp">
+                        <img src="user.png" alt="">
+                    </div> 
+                    
+                    <span class="msg_sender">
+                        <b>Andile Mazibuko</b>
+                    </span>
+                
+                </button>
+                
+                <button type="submit" class="user_msg_container">
+                    <div class="post-pp">
+                        <img src="user.png" alt="">
+                    </div> 
+                    
+                    <span class="msg_sender">
+                        <b>Andile Mazibuko</b>
+                    </span>
+                
+                </button>
+                <!--The end-->
+
+            </form>
+        </div>
+        
+       
+    </div>
+
+
+
+
+
+
 
     <div class="messesges" id="msgs">
         <div class="msg_nav">
@@ -434,6 +603,8 @@
         </div>
         <div class="user-msgs">
             <form action="">
+
+                <!--start-->
             <button type="submit" class="user_msg_container">
                 <div class="post-pp">
                     <img src="user.png" alt="">
@@ -662,6 +833,8 @@
                     <div style="background-color: #fff;" class="msg-status-dot"></div>
                 -->
             </button>
+
+            <!--The end-->
         </form>
         </div>
     </div>
@@ -678,8 +851,10 @@
         function setMessegesVisible()
         {
             let msgs = document.getElementById("msgs");
+            let msgbtn = document.getElementById("msg-btn");
 
             msgs.classList.toggle("msgs_visible");
+            msgbtn.classList.toggle("msg-btn-active");
         }
 
         
