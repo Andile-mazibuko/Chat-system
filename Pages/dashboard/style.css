@@ -25,6 +25,8 @@ header
     top: 0;
     border-bottom: .1px solid white;
     position: fixed;
+    display: flex;
+    align-items: center;
     background-color: var(--header_color);
     
 }
@@ -40,39 +42,38 @@ header
 .list-container
 {
     position: absolute;
-    width: 40%;
+    width: 30%;
     height: 100%;
     top: 0;
-    left: 30%;
+    left: 35%;
     display: flex;
     text-align: center;
-    justify-content: center;
-    
+    justify-content: center;  
 }
-ul 
+.list-container ul 
 {
     position: absolute;
     display: flex;
     text-align: center;
     justify-content: center;
     height: 100%;
-    top: -35%;
+    width: 100%;
+    top: 0;
+    
 }
 .list-container ul li
 {
     display: flex;
     margin-right: 10px;
     font-size: 25px;
-    margin-top: 10px;
 } 
- ul li a
+.list-container ul li a
 {
     font-style: none;
     color: var(--font-color);
     height: 38px;
     width: 60px;
-    
-   
+
 }
 .msg-btn-active
 {
@@ -80,12 +81,6 @@ ul
     color: blue;
     opacity: .5;
 }
-/*.list-container ul li a:active
-{
-    color: var(--fb_blue);
-    border-bottom: 4px solid var(--fb_blue);
-
-}*/
 #home
 {
     color: var(--fb_blue);
@@ -96,12 +91,30 @@ ul
     position: absolute;
     width: 30%;
     height: 100%;
-    top: 8%;
     right: 10px;
     display: flex;
-    text-align: right;
+    text-align: center;
+    justify-content: right; 
+}
+.second-list ul 
+{
+    position: absolute;
+    display: flex;
+    text-align: center;
     justify-content: right;
-    
+    height: 100%;
+    width: 100%;
+    bottom: -21%;
+}
+.second-list ul li
+{
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: 25px;
+    bottom: 0;
 }
 .second-list ul li a button img
 {
@@ -114,16 +127,10 @@ ul
     height: 100%;
     width: 100%;
 }
-.second-list ul li
-{
-    display: flex;
-}
+
 button
 {
     overflow: hidden;
-}
-button
-{
     background-color: var(--backgroung);
     border: none;
     font-size: 25px;
@@ -131,7 +138,7 @@ button
     height: 50px;
     width: 50px;
     border-radius: 25px;
-    margin-left: 1px;   
+    margin-left: 1px;
 }
 #user-home
 {
@@ -167,7 +174,7 @@ button
 {
     font-size: 20px;
     width: 100%;
-    height: 10%;
+    height: 8%;
     margin-top: 8px;
     border-radius: 2px;
     text-align: left;
@@ -387,6 +394,7 @@ button
 .post-invisible
 {
     visibility: visible;
+    opacity: 1;
 }
 .create-post-popup h1
 {

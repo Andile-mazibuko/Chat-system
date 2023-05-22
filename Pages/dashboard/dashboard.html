@@ -58,6 +58,7 @@
             <button><i class="fa-solid fa-play" style="color: #00aaff;"></i>Watch</button>
         </a>
 
+        <hr style="position: absolute; left: 0;">
     </div>
     <div class="container">
         
@@ -844,9 +845,10 @@
         function showPopUp()
         {
             let makePost = document.getElementById("post-visibility");
+            let body = document.getElementById("body");
 
             makePost.classList.toggle("post-invisible");
-        
+            body.classList.toggle("body-invisible");
         }
         function setMessegesVisible()
         {
