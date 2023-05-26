@@ -594,18 +594,16 @@
             </form>
         </div>
         <div class="toggle_bns">
-            <a href="">
                 <button>
                     Inbox
                 </button>
-            </a>
-            <a href="">
+    
                 <button>
                     communities
                 </button>
-            </a>
+            
         </div>
-        <div class="user-msgs">
+        <div class="hidden-content">
             <form action="">
 
                 <!--start-->
@@ -842,7 +840,7 @@
         </form>
         </div>
     </div>
-    <div class="hidden notifications-cont" id="notif-hidden">
+    <div class="hidden" id="notif-hidden">
         <div class="msg_nav">
             <h2>Notifications</h2>
             
@@ -850,6 +848,50 @@
                 <img src="more-horizontal.svg" alt="">
             </button>
         
+        </div>
+        <div class="toggle_bns" style="top: 6%;">
+            
+                <button>
+                    All
+                </button>
+        
+                <button>
+                    Unread
+                </button>
+        </div>
+        <div class="hidden-content" style="height: 89%;">
+            <div class="notification-container">
+                <div class="post-pp" style="position: absolute; left: 2%;">
+                    <img src="user.png" alt="">
+                </div>
+                <div class="text">
+                    <b>Andile Mazibuko</b> sent you a friend request
+                    <br><br>
+                    <i>8 weeks ago</i>
+                    <form action="">
+                        <button type="submit" value="Confirm+id" name="request button" style="background-color: rgb(73, 119, 247);"><b>Confirm</b></button>
+                        <button type="submit" value="Delete+id" name="request button" ><b>Delete</b></button>
+                    </form>
+                </div>
+            </div>
+            <!--
+                Second notification
+            -->
+            <div class="notification-container">
+                <div class="post-pp" style="position: absolute; left: 2%;">
+                    <img src="user.png" alt="">
+                </div>
+                <div class="text">
+                    <b>Andile Mazibuko</b> sent you a friend request
+                    <br><br>
+                    <i>8 weeks ago</i>
+                    <form action="">
+                        <button type="submit" value="Confirm+id" name="request button" style="background-color: rgb(73, 119, 247);"><b>Confirm</b></button>
+                        <button type="submit" value="Delete+id" name="request button" ><b>Delete</b></button>
+                    </form>
+                </div>
+            </div>
+            
         </div>
     </div>
 

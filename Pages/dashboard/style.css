@@ -6,6 +6,7 @@
     --font-color : rgb(212, 209, 209);
     --user-icon : white;
     --user-background : rgba(179, 176, 176, 0.884); 
+    --hover-color:  rgb(105, 105, 105);
 }
 
 .body
@@ -827,7 +828,7 @@ button
     
 }
 
-.messesges .toggle_bns
+.hidden .toggle_bns
 {
     position: absolute;
     top:12%;
@@ -835,14 +836,14 @@ button
     width: 100%;
 }
 
-.messesges .toggle_bns a button
+.hidden .toggle_bns button
 {
     width: auto;
     font-size: 15px;
     height: 80%;
     margin-left: 2%;
 }
-.user-msgs
+.hidden-content
 {
     position: absolute;
     height: 82%;
@@ -862,7 +863,7 @@ button
     height: 100%;
     width: 100%;
 }
-.user-msgs::-webkit-scrollbar
+.hidden-content::-webkit-scrollbar
 {
     display: none;
 }
@@ -921,8 +922,41 @@ button
     visibility: visible;   
 }
 
+.notification-container
+{
+    height:15%;
+    width: 100%;
+    margin-top: 5%;
+    position: relative;
+}
+.notification-container:hover
+{
+    background-color: var(--hover-color);
+}
+.text
+{
+    height: 100%;
+    width: 80%;
+    position: absolute;
+    right: 0;
+    color: var(--font-color);
 
+}
+.text form
+{
+    width: 100%;
+    height: 30%;
 
+    position: absolute;
+    bottom: 0%;
+}
+.text form button
+{
+    height: 100%;
+    width: 30%;
+    font-size: 80%;
+    border-radius: 5px;
+}
 
 .right-side
 {
