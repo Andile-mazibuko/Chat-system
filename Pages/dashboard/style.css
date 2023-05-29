@@ -1050,4 +1050,26 @@ hr
     {
         display: none;
     }
+    .right-side
+    {
+        visibility: hidden;
+    }
+    .search-container
+    {
+        width: 5%;
+        height: 70%;
+        border-radius: 30px;
+
+
+    }
+    .search-container form
+    {
+        visibility: hidden;
+    }
+    .search-container img
+    {
+        height: 60%;
+        width: auto;
+        left: 20%;
+    }
 }
