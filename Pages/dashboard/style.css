@@ -154,7 +154,7 @@ header
     font-size: 25px;
     bottom: 0;
 }
-.second-list ul li a button img
+.second-list ul li button img
 {
     height: 100%;
     width: 100%;
@@ -828,6 +828,8 @@ button
     
 }
 
+/* hidden section start*/
+
 .hidden .toggle_bns
 {
     position: absolute;
@@ -1014,6 +1016,11 @@ hr
     border: 1px solid grey;
     width: 90%;
     margin-top: 2%;
+}
+
+.user-about
+{
+    height: 30%;
 }
 @media (max-width:858px)
 {
