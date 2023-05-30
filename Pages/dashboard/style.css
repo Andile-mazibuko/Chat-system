@@ -14,6 +14,9 @@
     background-color: var(--backgroung);
     
 }
+/*
+    *  Hearder starts here 
+*/
 header
 {
     width: 100%;
@@ -192,6 +195,13 @@ button
 {
     display: none;
 }
+
+
+/*
+    * Header ends here 
+    * Left side of links starts
+*/
+
 .left-side
 {
     position: fixed;
@@ -227,6 +237,12 @@ button
 {
     margin-right: 10px;
 }
+
+
+/*
+    * Left side of links ends here 
+    * Main space start 
+*/
 
 .container
 {
