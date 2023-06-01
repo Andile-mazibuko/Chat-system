@@ -14,6 +14,9 @@
     background-color: var(--backgroung);
     
 }
+/*
+    *  Hearder starts here 
+*/
 header
 {
     width: 100%;
@@ -154,7 +157,7 @@ header
     font-size: 25px;
     bottom: 0;
 }
-.second-list ul li a button img
+.second-list ul li button img
 {
     height: 100%;
     width: 100%;
@@ -192,6 +195,13 @@ button
 {
     display: none;
 }
+
+
+/*
+    * Header ends here 
+    * Left side of links starts
+*/
+
 .left-side
 {
     position: fixed;
@@ -227,6 +237,12 @@ button
 {
     margin-right: 10px;
 }
+
+
+/*
+    * Left side of links ends here 
+    * Main space start 
+*/
 
 .container
 {
@@ -728,10 +744,6 @@ button
 {
     display: none;
 }
-.msgs_visible
-{
-    visibility: visible;
-}
 
 .msg_nav
 {
@@ -828,6 +840,8 @@ button
     
 }
 
+/* hidden section start*/
+
 .hidden .toggle_bns
 {
     position: absolute;
@@ -917,7 +931,7 @@ button
     bottom: auto;
     right: 5%;
 }
-.notif-visible
+.hidden-visible
 {
     visibility: visible;   
 }
@@ -1015,6 +1029,11 @@ hr
     width: 90%;
     margin-top: 2%;
 }
+
+.user-about
+{
+    height: 30%;
+}
 @media (max-width:858px)
 {
     .left-side
@@ -1049,5 +1068,27 @@ hr
     .second-list
     {
         display: none;
+    }
+    .right-side
+    {
+        visibility: hidden;
+    }
+    .search-container
+    {
+        width: 5%;
+        height: 70%;
+        border-radius: 30px;
+
+
+    }
+    .search-container form
+    {
+        visibility: hidden;
+    }
+    .search-container img
+    {
+        height: 60%;
+        width: auto;
+        left: 20%;
     }
 }

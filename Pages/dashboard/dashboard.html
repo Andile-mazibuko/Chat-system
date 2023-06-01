@@ -31,9 +31,9 @@
         <div class="second-list">
             <ul>
                 <li><a href="#" id="messenger"><button><img src="menu.svg" alt=""></button></a></li>
-                <li><button onclick="setMessegesVisible()" id="msg-btn"><i class="fa-brands fa-facebook-messenger"></i></button></li>
-                <li><button onclick="showNotification()" id="notif"><i class="fa-solid fa-bell"></i></button></li>
-                <li><a href="#" ><button id="user-home"><img src="user.png" alt=""></button></a></li>
+                <li><button onclick="toogleHidden('messeges')" id="msg-btn"><i class="fa-brands fa-facebook-messenger"></i></button></li>
+                <li><button onclick="toogleHidden('notifications')" id="notif"><i class="fa-solid fa-bell"></i></button></li>
+                <li><button id="user-home" onclick="toogleHidden('user-about')"><img src="user.png" alt=""></button></li>
             </ul>
         </div>
     </header>
@@ -866,7 +866,7 @@
                 </div>
                 <div class="text">
                     <b>Andile Mazibuko</b> sent you a friend request
-                    <br><br>
+                    <br>
                     <i>8 weeks ago</i>
                     <form action="">
                         <button type="submit" value="Confirm+id" name="request button" style="background-color: rgb(73, 119, 247);"><b>Confirm</b></button>
@@ -894,8 +894,12 @@
             
         </div>
     </div>
+    <div class="hidden user-about" id="user-about">
+
+    </div>
 
     <script type="text/javascript">
+       
         function showPopUp()
         {
             let makePost = document.getElementById("post-visibility");
@@ -903,32 +907,46 @@
             makePost.classList.toggle("post-invisible");
             
         }
-        function setMessegesVisible()
-        {
-            let msgs = document.getElementById("msgs");
-            let msgbtn = document.getElementById("msg-btn");
-            let notif = document.getElementById("notif-hidden");
-            let notifBtn = document.getElementById("notif");
-
-            msgs.classList.toggle("msgs_visible");
-            msgbtn.classList.toggle("btn-active");
-            notifBtn.classList.remove("btn-active");
-            notif.classList.remove("notif-visible");
-        }
-        function showNotification()
+     
+        function toogleHidden(id)
         {
             let notif = document.getElementById("notif-hidden");
             let notifBtn = document.getElementById("notif");
             let msgbtn = document.getElementById("msg-btn");
             let msgs = document.getElementById("msgs");
+            let userAbout = document.getElementById("user-about");
 
-            notifBtn.classList.toggle("btn-active");
-            notif.classList.toggle("notif-visible");
-            msgbtn.classList.remove("btn-active");
-            msgs.classList.remove("msgs_visible");
+            if(id == 'notifications')
+            {
+                notifBtn.classList.toggle("btn-active");
+                notif.classList.toggle("hidden-visible");
+                msgbtn.classList.remove("btn-active");
+                msgs.classList.remove("hidden-visible");  
+                userAbout.classList.remove("hidden-visible");
+
+            }else if(id == 'messeges')
+            {
+                msgs.classList.toggle("hidden-visible");
+                msgbtn.classList.toggle("btn-active");
+                notifBtn.classList.remove("btn-active");
+                notif.classList.remove("hidden-visible");
+                userAbout.classList.remove("hidden-visible");
+
+            }else if(id == 'user-about')
+            {
+                userAbout.classList.toggle("hidden-visible");
+                notifBtn.classList.remove("btn-active");
+                notif.classList.remove("hidden-visible");
+                msgbtn.classList.remove("btn-active");
+                msgs.classList.remove("hidden-visible");  
+                
+            }
             
+<<<<<<< HEAD
           
         
+=======
+>>>>>>> dea8fda197dcac0298ebb1d49410b499950d8251
         }
 
         
