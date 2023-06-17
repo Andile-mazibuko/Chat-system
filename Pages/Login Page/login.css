@@ -23,7 +23,7 @@ body
     border-radius: 10px;
     background-color: var(--form_color);
     box-shadow: 0px 3px 3px 3px var(--shadow);
-    /*filter: blur(10px);*/
+    
 }
 .form-container form
 {
@@ -104,15 +104,10 @@ a
     justify-content: center;
     align-items: center;
 }
-.create-account a
+.create-account button
 {
     height: 50%;
     width: 60%;
-}
-.create-account a button
-{
-    height: 100%;
-    width: 100%;
     border-radius: 10px;
     border: none;
     background-color: var(--create-account);
@@ -141,6 +136,15 @@ a
     background-color: var(--form_color);
     border-radius: 10px;
     box-shadow: 0px 3px 3px 3px var(--shadow);
+    visibility: hidden;
+}
+.visible
+{   
+    visibility: visible;
+}
+.blur
+{
+    filter: blur(10px)
 }
 .sign-up-form .header
 {
@@ -216,6 +220,8 @@ select
     height: 7%;
     margin-left: 5%;
     margin-top: 2%;
+    border: 1px solid;
+    border-radius: 2px;
     background-color: var(--background); 
 }
 .radio-container input

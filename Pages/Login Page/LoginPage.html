@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
-        <div class="text">
+        <div class="text" id="text">
             <h1>facebook</h1>
             <p>Facebook helps you connect and share<br> with the people in your life.</p>
         </div>
-        <div class="form-container">
+        <div class="form-container" id="login">
             <form action="" method="">
                 <input type="text" name="email_or_phone" id="" placeholder="Email or phone number">
                 <input type="text" name="password" id="" placeholder="Password">
@@ -25,19 +25,19 @@
             </div>
             
             <div class="create-account">
-                <a href="">
-                    <button>
+                
+                    <button onclick="toogle()">
                         Create new account
                     </button>
-                </a>
+                
             </div>    
         </div>
-        <div class="create-page">
+        <div class="create-page" id="page">
             <p><a href=""><b>Create a Page </b></a> for a celebrity</p>
         </div>
-        <div class="sign-up-form">
+        <div class="sign-up-form" id="sign-up">
             <div class="header">
-                <h2>Sign up</h2><p>it's quick and easy</p><button><b>X</b></button>
+                <h2>Sign up</h2><p>it's quick and easy</p><button onclick="toogle()"><b>X</b></button>
             </div>
             <form action="">
                 <input type="text" class="name" name="firstname" placeholder="First name">
@@ -78,5 +78,19 @@
                 </button>
             </form>
         </div>
+        <script type="text/javascript">
+            function toogle()
+            {
+                let text = document.getElementById("text");
+                let login = document.getElementById("login");
+                let signUp = document.getElementById("sign-up");
+                let page = document.getElementById("page");
+                text.classList.toggle("blur");
+                login.classList.toggle("blur");
+                page.classList.toggle("blur");
+                signUp.classList.toggle("visible");
+
+            }
+        </script>
 </body>
 </html>
