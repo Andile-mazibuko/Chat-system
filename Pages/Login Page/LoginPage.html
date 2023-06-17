@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Facebook-Log-in or sign up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
@@ -34,6 +35,48 @@
         <div class="create-page">
             <p><a href=""><b>Create a Page </b></a> for a celebrity</p>
         </div>
-        
+        <div class="sign-up-form">
+            <div class="header">
+                <h2>Sign up</h2><p>it's quick and easy</p><button><b>X</b></button>
+            </div>
+            <form action="">
+                <input type="text" class="name" name="firstname" placeholder="First name">
+                <input type="text" class="name" name="surname" placeholder="surname">
+                <input type="text" class="long-input" name="mobileORemail" placeholder="Mobile number or email address">
+                <input type="text" class="long-input" name="password" placeholder="New password">
+                
+                <p >Date of birth</p>
+                <select name="day" id="day">
+                    <!--Display days up to  day 31 with a loop-->
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    
+                </select>
+                <select name="month" id="">
+                    <option value="june">Jun</option>
+                </select>
+                <!--Display years with a loop starting from 1905-->
+                <select name="month" id="">
+                    <option value="">2023</option>
+                </select>
+                <p >Gender</p>
+                <div class="radio-container">
+                    <input type="radio" name="gender" id="Male" value="Male">
+                    <label for="Male">Male</label>
+                </div>
+                <div class="radio-container">
+                    <input type="radio" name="gender" id="Female" value="Female">
+                    <label for="Female">Female</label>
+                </div>
+                <div class="radio-container">
+                    <input type="radio" name="gender" id="Custom" value="Custom">
+                    <label for="Custom">Custom</label>
+                </div>
+
+                <button type="submit" class="sign-up-btn">
+                    Sign up
+                </button>
+            </form>
+        </div>
 </body>
 </html>
