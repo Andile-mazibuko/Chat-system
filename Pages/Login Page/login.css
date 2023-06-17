@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Roboto:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Roboto:wght@900&family=Work+Sans:wght@700&display=swap');
 :root
 {
     --background: aliceblue;
@@ -23,7 +23,7 @@ body
     border-radius: 10px;
     background-color: var(--form_color);
     box-shadow: 0px 3px 3px 3px var(--shadow);
-    
+    transition: .5s linear; 
 }
 .form-container form
 {
@@ -72,7 +72,7 @@ body
     height: 40%;
     top: 15%;
     left: 25%;
-    
+    transition: .5s linear;
 }
 .text h1
 {
@@ -112,6 +112,8 @@ a
     border: none;
     background-color: var(--create-account);
     color: var(--form_color);
+    font-family: 'Work Sans', sans-serif;
+    font-size: medium;
 }
 .create-page
 {
@@ -121,6 +123,7 @@ a
     width: 25%;
     display: flex;
     justify-content:center;
+    transition: .5s linear;
 }
 .create-page p a 
 {
@@ -137,6 +140,7 @@ a
     border-radius: 10px;
     box-shadow: 0px 3px 3px 3px var(--shadow);
     visibility: hidden;
+    transition: .1s linear;
 }
 .visible
 {   
@@ -144,7 +148,8 @@ a
 }
 .blur
 {
-    filter: blur(10px)
+    filter: blur(10px);
+    transition: .5s linear;
 }
 .sign-up-form .header
 {
@@ -240,6 +245,8 @@ select
     background-color: var(--create-account);
     border: none;
     border-radius: 10px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: medium;
 }
 .sign-up-form p
 {
