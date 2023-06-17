@@ -126,3 +126,29 @@ a
 {
     color: black;
 }
+/*
+ * small screens 
+*/
+@media (max-width: 1024px)
+{
+    .text
+    {
+        position: absolute;
+        top: 0%;
+        left: 35%;
+        height: 30%;
+    }
+    .form-container
+    {
+        top: 32%;
+        width: 40%;
+        left: 30%;
+    }
+    .create-page
+    {
+        top: 74%;
+        width: 50%;
+        left: 25%;
+    }
+    
+}
