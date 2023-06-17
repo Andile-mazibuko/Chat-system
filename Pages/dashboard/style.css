@@ -345,6 +345,9 @@ button
     border-radius: 17.5px;
     top: 5%;
     left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     background-color: var(--user-background);
     overflow: hidden;
