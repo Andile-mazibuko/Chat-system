@@ -1,0 +1,114 @@
+
+:root
+{
+    --background: aliceblue;
+    --form_color: #FFFFFF;
+    --shadow: rgb(185, 185, 185);
+    --fb_blue : rgb(73, 119, 247);
+}
+body
+{
+    background-color: var(--background);
+}
+
+.form-container
+{
+    position: absolute;
+    width: 25%;
+    height: 40%;
+    top: 15%;
+    right: 15%;
+    border-radius: 10px;
+    background-color: var(--form_color);
+    box-shadow: 0px 3px 3px 3px var(--shadow);
+}
+.form-container form
+{
+    position: absolute;
+    width: 90%;
+    height: 60%;
+    left: 5%;
+    margin-top: 2%;
+}
+
+.form-container form input
+{
+    position: relative;
+    width: 99%;
+    height: 25%;
+    margin-top: 2%;
+    border-radius: 10px;
+    border: 1px solid #c5c5c5;
+    box-shadow: 2px 2px 2px 0px var(--shadow);
+    
+}
+.form-container form input:focus
+{
+    border: 2px solid var(--fb_blue);   
+    outline: none;
+}
+#submit-btn
+{
+    background-color: var(--fb_blue);
+    color: var(--form_color);
+}
+.form-container .link-container
+{
+    position: absolute;
+    top: 63%;
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.text
+{
+    position: absolute;
+    width: 30%;
+    height: 40%;
+    top: 15%;
+    left: 25%;
+    
+}
+.text h1
+{
+    font-size: 50px;
+    display: flex;
+    color: var(--fb_blue);
+}
+.text p
+{
+    font-size: 25px;
+}
+
+a
+{
+    text-decoration: none;
+    color: var(--fb_blue);
+}
+.create-account
+{
+    position: absolute;
+    height: 25%;
+    width: 80%;
+    left: 10%;
+    border-top: 1px solid black;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.create-account a
+{
+    height: 50%;
+    width: 60%;
+}
+.create-account a button
+{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(50, 215, 28);
+    color: var(--form_color);
+}
