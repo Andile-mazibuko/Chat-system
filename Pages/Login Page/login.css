@@ -41,6 +41,7 @@ body
     border: 1px solid #c5c5c5;
     box-shadow: 2px 2px 2px 0px var(--shadow);
     
+    
 }
 .form-container form input:focus
 {
@@ -111,4 +112,17 @@ a
     border: none;
     background-color: rgb(50, 215, 28);
     color: var(--form_color);
+}
+.create-page
+{
+    position: absolute;
+    top: 58%;
+    right: 15%;
+    width: 25%;
+    display: flex;
+    justify-content:center;
+}
+.create-page p a 
+{
+    color: black;
 }
