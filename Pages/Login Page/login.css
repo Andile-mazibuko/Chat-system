@@ -253,6 +253,10 @@ select
     margin-left: 5%;
     color: var(--shadow);
 }
+a:hover
+{
+    text-decoration: underline;
+}
 
 /*
  * small screens 
