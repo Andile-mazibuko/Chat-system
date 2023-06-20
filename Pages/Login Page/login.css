@@ -273,14 +273,19 @@ a:hover
     .form-container
     {
         top: 32%;
-        width: 40%;
-        left: 30%;
+        width: 60%;
+        left: 20%;
     }
     .create-page
     {
         top: 74%;
         width: 50%;
         left: 25%;
+    }
+    .sign-up-form
+    {
+        width: 70%;
+        left: 15%;
     }
     
 }
