@@ -17,7 +17,7 @@
         <div class="form-container" id="login">
             <form action="" method="">
                 <input type="text" name="email_or_phone" id="" placeholder="Email or phone number">
-                <input type="text" name="password" id="" placeholder="Password">
+                <input type="password" name="password" id="" placeholder="Password">
                 <input type="submit" value="Log in" id="submit-btn">
             </form>
             <div class="link-container">
@@ -40,7 +40,7 @@
             <div class="header">
                 <h2>Sign up</h2><p>it's quick and easy</p><button onclick="toogle()"><b>X</b></button>
             </div>
-            <form action="">
+            <form action="" name="signUpform" onsubmit="validateSignUp()">
                 <input type="text" class="name" name="firstname" placeholder="First name">
                 <input type="text" class="name" name="surname" placeholder="surname">
                 <input type="text" class="long-input" name="mobileORemail" placeholder="Mobile number or email address">
@@ -91,6 +91,51 @@
                 page.classList.toggle("blur");
                 signUp.classList.toggle("visible");
 
+            }
+            function validateSignUp()
+            {
+                let firstname = document.forms["signUpform"]["firstname"].value;
+                let password = document.forms["signUpform"]["password"].value;
+                let isUppserCase = false;
+                let isLowerCase  = false;
+                let isRequiredLength = false;
+                let isSpecialChar = false;
+                let isNum = false;
+                
+                let passwordLength = password.length;
+                let character = ' ';
+                if(passwordLength <= 6)
+                {
+                    //alert("hi");
+                   // return false;
+                    
+                    for(let i = 0; i < passwordLength; i++)
+                    {
+                        character = password.charAt(i);
+                        if(character == character.toUpperCase())
+                        {
+                            
+                            isUppserCase = true;
+                        }
+                        else if(character == character.toLowerCase())
+                        {
+                            isLowerCase = true;
+                        }
+                
+                        else if(character !== character.toUpperCase() && character !== character.toLowerCase())
+                        {
+                            isSpecialChar = true;
+                        }
+                    }
+                    
+                }
+                
+               /* 
+                if(password.length == 4){
+                    alert("Firstname is required");
+                    return false;
+                }*/
+                
             }
         </script>
 </body>
