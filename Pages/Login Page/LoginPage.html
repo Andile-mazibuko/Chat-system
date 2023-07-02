@@ -44,7 +44,7 @@
                 <input type="text" class="name" name="firstname" placeholder="First name">
                 <input type="text" class="name" name="surname" placeholder="surname">
                 <input type="text" class="long-input" name="mobileORemail" placeholder="Mobile number or email address">
-                <input type="text" class="long-input" name="password" placeholder="New password">
+                <input type="password" class="long-input" name="password" placeholder="New password">
                 
                 <p >Date of birth</p>
                 <select name="day" id="day">
@@ -92,6 +92,7 @@
                 signUp.classList.toggle("visible");
 
             }
+
             function validateSignUp()
             {
                 let firstname = document.forms["signUpform"]["firstname"].value;
@@ -104,14 +105,16 @@
                 
                 let passwordLength = password.length;
                 let character = ' ';
-                if(passwordLength <= 6)
+                if(passwordLength >= 6)
                 {
+                    isRequiredLength = true;
                     //alert("hi");
                    // return false;
                     
                     for(let i = 0; i < passwordLength; i++)
                     {
                         character = password.charAt(i);
+                      
                         if(character == character.toUpperCase())
                         {
                             
@@ -126,16 +129,31 @@
                         {
                             isSpecialChar = true;
                         }
+
                     }
-                    
+
+                    if(isLowerCase && isUppserCase && isRequiredLength)
+                        {
+                            //alert("SUCCESS");
+                            return true;
+
+                        }else 
+                        {
+                            alert("something went wrong ");
+                            return false;   
+                        }                    
                 }
-                
-               /* 
-                if(password.length == 4){
-                    alert("Firstname is required");
+                else
+                {
+                    alert("Password must be a minimum of 6 characters");
                     return false;
-                }*/
-                
+                }
+                /*
+                function checkSpecialCharacters()
+                {
+
+                }
+               */ 
             }
         </script>
 </body>
