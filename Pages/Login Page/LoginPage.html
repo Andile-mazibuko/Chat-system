@@ -41,24 +41,23 @@
                 <h2>Sign up</h2><p>it's quick and easy</p><button onclick="toogle()"><b>X</b></button>
             </div>
             <form action="" name="signUpform" onsubmit="validateSignUp()">
-                <input type="text" class="name" name="firstname" placeholder="First name">
-                <input type="text" class="name" name="surname" placeholder="surname">
-                <input type="text" class="long-input" name="mobileORemail" placeholder="Mobile number or email address">
-                <input type="password" class="long-input" name="password" placeholder="New password">
+                <input type="text" class="name" name="firstname" placeholder="First name" required>
+                <input type="text" class="name" name="surname" placeholder="surname" required>
+                <input type="text" class="long-input" name="mobileORemail" placeholder="Mobile number or email address" required>
+                <input type="password" class="long-input" name="password" placeholder="New password" required>
                 
                 <p >Date of birth</p>
-                <select name="day" id="day">
+                <select name="day" id="days" required>
                     <!--Display days up to  day 31 with a loop-->
-                    <option value="1">1</option>
-                    <option value="2">2</option>
+                    
                     
                 </select>
-                <select name="month" id="">
+                <select name="month" id="month" required>
                     <option value="june">Jun</option>
                 </select>
                 <!--Display years with a loop starting from 1905-->
-                <select name="month" id="">
-                    <option value="">2023</option>
+                <select name="year" id="year" required>
+                    
                 </select>
                 <p >Gender</p>
                 <div class="radio-container">
@@ -79,87 +78,6 @@
                 </button>
             </form>
         </div>
-        <script type="text/javascript">
-            function toogle()
-            {
-                let text = document.getElementById("text");
-                let login = document.getElementById("login");
-                let signUp = document.getElementById("sign-up");
-                let page = document.getElementById("page");
-                text.classList.toggle("blur");
-                login.classList.toggle("blur");
-                page.classList.toggle("blur");
-                signUp.classList.toggle("visible");
-
-            }
-
-            function validateSignUp()
-            {
-                let firstname = document.forms["signUpform"]["firstname"].value;
-                let password = document.forms["signUpform"]["password"].value;
-                let isUppserCase = false;
-                let isLowerCase  = false;
-                let isRequiredLength = false;
-                let isSpecialChar = false;
-                let isNum = false;
-                
-                let passwordLength = password.length;
-                let character = ' ';
-                if(passwordLength >= 6)
-                {
-                    isRequiredLength = true;
-                    //alert("hi");
-                   // return false;
-                    
-                    for(let i = 0; i < passwordLength; i++)
-                    {
-                        character = password.charAt(i);
-                        
-                        if(Number.isInteger(parseInt(character)))
-                        {
-                            isNum = true;
-                            
-                        }
-                        //Check if the character is upper case 
-                        else if(character == character.toUpperCase())
-                        {
-                            
-                            isUppserCase = true;
-                        }
-                        //check if characte is lower case 
-                        else if(character == character.toLowerCase())
-                        {
-                            isLowerCase = true;
-                        }
-                        //check if character is a special character 
-                        
-                        
-
-                    }
-
-                    if(isLowerCase && isUppserCase && isRequiredLength && isNum)
-                    {
-                           
-                            return true;
-
-                    }else 
-                    {
-                        alert("something went wrong ");
-                        return false;   
-                    }                    
-                }
-                else
-                {
-                    alert("Password must be a minimum of 6 characters");
-                    return false;
-                }
-                /*
-                function checkSpecialCharacters()
-                {
-
-                }
-               */ 
-            }
-        </script>
+        <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
