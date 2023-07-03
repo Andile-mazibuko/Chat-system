@@ -114,8 +114,14 @@
                     for(let i = 0; i < passwordLength; i++)
                     {
                         character = password.charAt(i);
+                        
+                        if(Number.isInteger(parseInt(character)))
+                        {
+                            isNum = true;
+                            
+                        }
                         //Check if the character is upper case 
-                        if(character == character.toUpperCase())
+                        else if(character == character.toUpperCase())
                         {
                             
                             isUppserCase = true;
@@ -126,24 +132,21 @@
                             isLowerCase = true;
                         }
                         //check if character is a special character 
-                        // TODO: fix this block
-                        else if(character !== character.toUpperCase() && character !== character.toLowerCase())
-                        {
-                            isSpecialChar = true;
-                        }
+                        
+                        
 
                     }
 
-                    if(isLowerCase && isUppserCase && isRequiredLength)
-                        {
+                    if(isLowerCase && isUppserCase && isRequiredLength && isNum)
+                    {
                            
                             return true;
 
-                        }else 
-                        {
-                            alert("something went wrong ");
-                            return false;   
-                        }                    
+                    }else 
+                    {
+                        alert("something went wrong ");
+                        return false;   
+                    }                    
                 }
                 else
                 {
