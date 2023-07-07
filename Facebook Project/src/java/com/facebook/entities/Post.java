@@ -6,10 +6,17 @@
 package com.facebook.entities;
 
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.Lob;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -23,6 +30,29 @@ public class Post implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(name = "post_cation")
+    private String caption;
+    
+    @Lob
+    @Column(name = "post_file")
+    private byte[] postMedia;
+    
+    @Column(name = "profile_picture")
+    private boolean isProfilePicture;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "post_comments",joinColumns = @JoinColumn(name = "post_id"),inverseJoinColumns = @JoinColumn(name = "comment_id"))
+    private List<FacebookComment> postComments;
+    
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "post_likes",joinColumns = @JoinColumn(name = "post_id"),inverseJoinColumns = @JoinColumn(name = "like_id"))
+    private List<Reaction> postlikes;
+    
+    
+    
+    public Post() {
+    }
+
     public Long getId() {
         return id;
     }
@@ -31,29 +61,45 @@ public class Post implements Serializable {
         this.id = id;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
+    public String getCaption() {
+        return caption;
     }
 
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Post)) {
-            return false;
-        }
-        Post other = (Post) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
+    public void setCaption(String caption) {
+        this.caption = caption;
     }
 
-    @Override
-    public String toString() {
-        return "com.facebook.entities.Post[ id=" + id + " ]";
+    public byte[] getPostMedia() {
+        return postMedia;
     }
+
+    public void setPostMedia(byte[] postMedia) {
+        this.postMedia = postMedia;
+    }
+
+    public boolean isIsProfilePicture() {
+        return isProfilePicture;
+    }
+
+    public void setIsProfilePicture(boolean isProfilePicture) {
+        this.isProfilePicture = isProfilePicture;
+    }
+
+    public List<FacebookComment> getPostComments() {
+        return postComments;
+    }
+
+    public void setPostComments(List<FacebookComment> postComments) {
+        this.postComments = postComments;
+    }
+
+    public List<Reaction> getPostlikes() {
+        return postlikes;
+    }
+
+    public void setPostlikes(List<Reaction> postlikes) {
+        this.postlikes = postlikes;
+    }
+    
     
 }

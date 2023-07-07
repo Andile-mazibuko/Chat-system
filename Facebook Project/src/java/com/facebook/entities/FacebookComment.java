@@ -18,22 +18,21 @@ import javax.persistence.Table;
  * @author andil
  */
 @Entity
-@Table(name = "friends-tbl")
-public class Friend implements Serializable {
+@Table(name = "comment-tbl")
+public class FacebookComment implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "friend_id")
     private Long id;
     
-    @Column(name = "user_id")
-    private FacebookUser friend;
+    @Column(name = "comment")
+    private String commentMessage;
     
-    @Column(name = "friendship_status")
-    private String friendshipStatus;
+    @Column(name = "comment_owner")
+    private FacebookUser commentOwner;
 
-    public Friend() {
+    public FacebookComment() {
     }
 
     public Long getId() {
@@ -44,20 +43,22 @@ public class Friend implements Serializable {
         this.id = id;
     }
 
-    public FacebookUser getFriend() {
-        return friend;
+    public String getCommentMessage() {
+        return commentMessage;
     }
 
-    public void setFriend(FacebookUser friend) {
-        this.friend = friend;
+    public void setCommentMessage(String commentMessage) {
+        this.commentMessage = commentMessage;
     }
 
-    public String getFriendshipStatus() {
-        return friendshipStatus;
+    public FacebookUser getCommentOwner() {
+        return commentOwner;
     }
 
-    public void setFriendshipStatus(String friendshipStatus) {
-        this.friendshipStatus = friendshipStatus;
+    public void setCommentOwner(FacebookUser commentOwner) {
+        this.commentOwner = commentOwner;
     }
+    
+    
     
 }
