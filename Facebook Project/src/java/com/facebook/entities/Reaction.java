@@ -11,12 +11,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author andil
  */
 @Entity
+@Table(name = "reaction-tbl")
 public class Reaction implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -29,6 +31,34 @@ public class Reaction implements Serializable {
     
     @Column(name = "user_id")
     private FacebookUser reactOwner;
+
+    public Reaction() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getReactionType() {
+        return reactionType;
+    }
+
+    public void setReactionType(String reactionType) {
+        this.reactionType = reactionType;
+    }
+
+    public FacebookUser getReactOwner() {
+        return reactOwner;
+    }
+
+    public void setReactOwner(FacebookUser reactOwner) {
+        this.reactOwner = reactOwner;
+    }
+    
     
     
 }

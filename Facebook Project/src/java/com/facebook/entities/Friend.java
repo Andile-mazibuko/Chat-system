@@ -18,7 +18,7 @@ import javax.persistence.Table;
  * @author andil
  */
 @Entity
-@Table(name = "friends-tbl")
+@Table(name = "friend-tbl")
 public class Friend implements Serializable {
 
     private static final long serialVersionUID = 1L;
