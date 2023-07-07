@@ -5,14 +5,20 @@ const year = document.getElementById("year");
     let numOfDays = new Date(new Date().getFullYear(),new Date().getMonth()+1,0).getDate();
     let monthName = new Date().getMonth();
     let currentYear = new Date().getFullYear();
-            
+    let todaysDate = new Date();        
+    
     for(let i = 0; i < numOfDays; i++)
     {
         let opt = document.createElement("option");
         opt.value = i+1;
         opt.text = i+1;        
         days.add(opt);
+        if(opt.value === todaysDate.getDate()-1)
+        {
+            days.selectedIndex = todaysDate.getDate()-1;
+        }  
     }
+    
             
     for(let i = 0; i < 12; i++)
     {
@@ -20,6 +26,10 @@ const year = document.getElementById("year");
         opt.value = getMothName(i);
         opt.text = getMothName(i);        
         month.add(opt);
+        if(opt.value === getMothName(todaysDate.getMonth()))
+        {
+            month.selectedIndex = todaysDate.getDate()-1;
+        }
     }
     for(let i = currentYear ; i > 1904; i--)
     {
@@ -27,6 +37,7 @@ const year = document.getElementById("year");
         opt.value = i;
         opt.text = i;        
         year.add(opt);
+
     }
             
     function getMothName(monthNumber)

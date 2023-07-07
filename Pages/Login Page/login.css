@@ -219,7 +219,7 @@ select
 }
 .radio-container
 {
-    display: inline-block;
+    display: inline;
     position: relative;
     width: 26.7%;
     height: 7%;
@@ -229,6 +229,7 @@ select
     border-radius: 2px;
     background-color: var(--background); 
 }
+
 .radio-container input
 {
     height: 100%;
