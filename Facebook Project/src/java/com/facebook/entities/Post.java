@@ -17,14 +17,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.Lob;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 /**
  *
  * @author andil
  */
 @Entity
-@Table(name = "post-tbl")
 public class Post implements Serializable {
 
     private static final long serialVersionUID = 1L;

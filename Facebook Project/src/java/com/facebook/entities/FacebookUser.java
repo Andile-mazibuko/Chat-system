@@ -27,7 +27,6 @@ import javax.persistence.TemporalType;
  */
 
 @Entity
-@Table(name = "user-tbl")
 public class FacebookUser implements Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -18,7 +18,6 @@ import javax.persistence.Table;
  * @author andil
  */
 @Entity
-@Table(name = "message-tbl")
 public class FacebookMessage implements Serializable {
 
     private static final long serialVersionUID = 1L;

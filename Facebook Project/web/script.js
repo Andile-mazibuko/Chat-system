@@ -2,6 +2,7 @@ const days = document.getElementById("days");
 const month = document.getElementById("month");
 const year = document.getElementById("year");
 
+
     let numOfDays = new Date(new Date().getFullYear(),new Date().getMonth()+1,0).getDate();
     let monthName = new Date().getMonth();
     let currentYear = new Date().getFullYear();
@@ -23,7 +24,7 @@ const year = document.getElementById("year");
     for(let i = 0; i < 12; i++)
     {
         let opt = document.createElement("option");
-        opt.value = getMothName(i);
+        opt.value = i+1;
         opt.text = getMothName(i);        
         month.add(opt);
         if(opt.value === getMothName(todaysDate.getMonth()))
@@ -62,6 +63,7 @@ const year = document.getElementById("year");
     {
         let firstname = document.forms["signUpform"]["firstname"].value;
         let password = document.forms["signUpform"]["password"].value;
+        const signUpForm = document.getElementById("sign-up-form");
         let isUppserCase = false;
         let isLowerCase  = false;
         let isRequiredLength = false;
@@ -89,7 +91,7 @@ const year = document.getElementById("year");
                         isUppserCase = true;
                     }
                      
-                    else if(character == character.toLowerCase())
+                    else if(character === character.toLowerCase())
                     {
                         isLowerCase = true;
                     }
@@ -103,12 +105,14 @@ const year = document.getElementById("year");
 
                 }else 
                 {
+                    signUpForm.preventDefault();
                     alert("something went wrong ");
                     return false;   
                 }                    
             }
             else
             {
+                signUpForm.preventDefault();
                 alert("Password must be a minimum of 6 characters");
                 return false;
             }          
