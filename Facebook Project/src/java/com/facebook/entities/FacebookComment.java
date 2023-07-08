@@ -30,7 +30,7 @@ public class FacebookComment implements Serializable {
     private String commentMessage;
     
     @Column(name = "comment_owner")
-    private FacebookUser commentOwner;
+    private Long commentOwner;
 
     public FacebookComment() {
     }
@@ -51,11 +51,11 @@ public class FacebookComment implements Serializable {
         this.commentMessage = commentMessage;
     }
 
-    public FacebookUser getCommentOwner() {
+    public Long getCommentOwner() {
         return commentOwner;
     }
 
-    public void setCommentOwner(FacebookUser commentOwner) {
+    public void setCommentOwner(Long commentOwner) {
         this.commentOwner = commentOwner;
     }
     

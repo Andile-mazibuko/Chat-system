@@ -28,7 +28,7 @@ public class Friend implements Serializable {
     private Long id;
     
     @Column(name = "user_id")
-    private FacebookUser friend;
+    private Long friend;
     
     @Column(name = "friendship_status")
     private String friendshipStatus;
@@ -44,11 +44,11 @@ public class Friend implements Serializable {
         this.id = id;
     }
 
-    public FacebookUser getFriend() {
+    public Long getFriend() {
         return friend;
     }
 
-    public void setFriend(FacebookUser friend) {
+    public void setFriend(Long friend) {
         this.friend = friend;
     }
 

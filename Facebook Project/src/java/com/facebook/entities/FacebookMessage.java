@@ -27,7 +27,7 @@ public class FacebookMessage implements Serializable {
     private Long id;
 
     @Column(name = "msg_reciever")
-    private FacebookUser reciever;
+    private long recieverId;
     
     @Column(name = "message")
     private String messageContent;
@@ -43,14 +43,14 @@ public class FacebookMessage implements Serializable {
         this.id = id;
     }
 
-    public FacebookUser getReciever() {
-        return reciever;
+    public long getRecieverId() {
+        return recieverId;
     }
 
-    public void setReciever(FacebookUser reciever) {
-        this.reciever = reciever;
+    public void setRecieverId(long recieverId) {
+        this.recieverId = recieverId;
     }
-
+    
     public String getMessageContent() {
         return messageContent;
     }

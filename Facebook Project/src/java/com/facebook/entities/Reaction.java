@@ -30,7 +30,7 @@ public class Reaction implements Serializable {
     private String reactionType;
     
     @Column(name = "user_id")
-    private FacebookUser reactOwner;
+    private Long userId;
 
     public Reaction() {
     }
@@ -51,12 +51,12 @@ public class Reaction implements Serializable {
         this.reactionType = reactionType;
     }
 
-    public FacebookUser getReactOwner() {
-        return reactOwner;
+    public Long getReactOwner() {
+        return userId;
     }
 
-    public void setReactOwner(FacebookUser reactOwner) {
-        this.reactOwner = reactOwner;
+    public void setReactOwner(Long userId) {
+        this.userId = userId;
     }
     
     
