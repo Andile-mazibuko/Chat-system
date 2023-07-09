@@ -8,6 +8,10 @@
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>com.facebook.servlets.LoginServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DashboardSesvlet</servlet-name>
+        <servlet-class>com.facebook.servlets.DashboardSesvlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SignupServlet</servlet-name>
         <url-pattern>/SignupServlet.com</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet.com</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DashboardSesvlet</servlet-name>
+        <url-pattern>/DashboardSesvlet.com</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

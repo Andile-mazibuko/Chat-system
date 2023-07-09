@@ -37,7 +37,15 @@ header
     width: 50px;
     border-radius: 25px;
     left: 0%;
-    background-color: var(--fb_blue)
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--fb_blue);
+}
+.logo-container img
+{
+    height: 100%;
+    width: auto;
 }
 .list-container
 {

@@ -5,6 +5,11 @@
  */
 package com.facebook.processor;
 
+import com.facebook.entities.FacebookUser;
+import com.facebook.sessinbeans.FacebookUserFacadeLocal;
+import java.util.ArrayList;
+import java.util.List;
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
 /**
@@ -13,6 +18,9 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class Processor implements ProcessorLocal{
+
+    @EJB
+    private FacebookUserFacadeLocal facebookUserFacade;
 
     @Override
     public boolean isCellphoneNumber(String mobileOrCellphone) 
@@ -42,6 +50,39 @@ public class Processor implements ProcessorLocal{
         return isCellNo;
     
     }
-
+    public List<FacebookUser> findMatchingUsers(String emailOrPassword)
+    {
+        List<FacebookUser> allUsers = facebookUserFacade.findAll();
+        List<FacebookUser> matchingAccounts = new ArrayList<>();
+        
+        
+            for(FacebookUser facebookUser : allUsers)
+            {
+                if(isCellphoneNumber(emailOrPassword) && facebookUser.getCellphoneNumber() != null && facebookUser.getCellphoneNumber().equals(Long.parseLong(emailOrPassword)))
+                {
+                    matchingAccounts.add(facebookUser);
+                }else if(facebookUser.getEmailAdddress() != null && !isCellphoneNumber(emailOrPassword))
+                {
+                    matchingAccounts.add(facebookUser);
+                }
+                
+            }
+        return matchingAccounts;
+    }
+    public FacebookUser findCorrectUser(List<FacebookUser>matchingUsers, String password)
+    {
+        FacebookUser user = new FacebookUser();
+        for(FacebookUser facebookUser : matchingUsers)
+        {
+            if(facebookUser.getPassword().equals(password))
+            {
+                user = facebookUser;
+                break;
+            }
+            
+        }
+        return user;
+    }
+    
     
 }

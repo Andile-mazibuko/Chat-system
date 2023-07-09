@@ -44,29 +44,12 @@ public class LoginServlet extends HttpServlet {
         HttpSession session = request.getSession(true);
         String emailOrMobile = request.getParameter("email_or_phone");
         String password = request.getParameter("password");
-    
-        System.out.println(emailOrMobile);
-        //System.out.println(findMatchingUser(emailOrMobile));
-        
+
+        FacebookUser user = processor.findCorrectUser(processor.findMatchingUsers(emailOrMobile), password);
+
+        session.setAttribute("user", user);
+        response.sendRedirect("DashboardSesvlet.com");
     }
-    private List<FacebookUser> findMatchingUser(String emailOrPassword)
-    {
-        List<FacebookUser> allUsers = facebookUserFacade.findAll();
-        List<FacebookUser> matchingAccounts = new ArrayList<>();
-        
-        
-            for(int i = 0; i < allUsers.size(); i++)
-            {
-                
-                    if(allUsers.get(i).getEmailAdddress().equalsIgnoreCase(emailOrPassword))
-                    {
-                        matchingAccounts.add(allUsers.get(i));
-                    }
-                
-            }
-        return matchingAccounts;
-    }
-    
     
 
 }
