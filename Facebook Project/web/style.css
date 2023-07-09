@@ -1,0 +1,1153 @@
+:root
+{
+    --backgroung : rgb(19, 19, 19);
+    --fb_blue : rgb(73, 119, 247);
+    --header_color  : rgb(27, 27, 27);
+    --font-color : rgb(212, 209, 209);
+    --user-icon : white;
+    --user-background : rgba(179, 176, 176, 0.884); 
+    --hover-color:  rgb(105, 105, 105);
+}
+
+.body
+{
+    background-color: var(--backgroung);
+    
+}
+/*
+    *  Hearder starts here 
+*/
+header
+{
+    width: 100%;
+    height: 7%;
+    left: 0;
+    top: 0;
+    border-bottom: 0.1px solid grey;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    background-color: var(--header_color);
+    
+}
+.logo-container
+{
+    position: inherit;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    left: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--fb_blue);
+}
+.logo-container img
+{
+    height: 100%;
+    width: auto;
+}
+.list-container
+{
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    top: 0;
+    left: 35%;
+    display: flex;
+    text-align: center;
+    justify-content: center;  
+}
+.search-container
+{
+    position: absolute;
+    left: 59px;
+    width: 15%;
+    height: 70%;
+    background-color: var(--backgroung);
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+}
+.search-container img
+{
+    position: absolute;
+    left: 4%;
+    height: auto;
+    width: 10%;
+}
+.search-container form
+{
+    height: 100%;
+    width: 80%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    border-radius: 50px;
+}
+.search-container form input
+{
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    font-size: larger;
+    background-color: var(--backgroung);
+    color: var(--font-color);
+}
+.list-container ul 
+{
+    position: absolute;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    
+}
+.list-container ul li
+{
+    display: flex;
+    margin-right: 10px;
+    font-size: 25px;
+} 
+.list-container ul li a
+{
+    font-style: none;
+    color: var(--font-color);
+    height: 38px;
+    width: 60px;
+
+}
+.btn-active
+{
+    background-color: var(--fb_blue);
+    color: blue;
+    opacity: .5;
+}
+#home
+{
+    color: var(--fb_blue);
+    border-bottom: 4px solid var(--fb_blue);
+}
+.second-list
+{
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    right: 10px;
+    display: flex;
+    text-align: center;
+    justify-content: right; 
+}
+.second-list ul 
+{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    height: 100%;
+    width: 100%;
+    margin:0;
+}
+.second-list ul li
+{
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: 25px;
+    bottom: 0;
+}
+.second-list ul li button img
+{
+    height: 100%;
+    width: 100%;
+    
+}
+.second-list ul li a img
+{
+    height: 100%;
+    width: 100%;
+}
+
+button
+{
+    overflow: hidden;
+    background-color: var(--backgroung);
+    border: none;
+    font-size: 25px;
+    color: var(--font-color);
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    margin-left: 1px;
+}
+#user-home
+{
+    background-color: var(--user-background);
+    overflow: hidden;
+}
+#user-home img
+{
+    height: 100%;
+}
+
+.left-side::-webkit-scrollbar
+{
+    display: none;
+}
+
+
+/*
+    * Header ends here 
+    * Left side of links starts
+*/
+
+.left-side
+{
+    position: fixed;
+    height: 93%;
+    width: 20%;
+    bottom: 0;
+    overflow-y: scroll;
+   
+}
+.left-side a
+{
+    position: relative;
+    height: 10%;
+    width: 100%;
+    text-decoration: none;
+}
+.left-side a button
+{
+    font-size: 20px;
+    width: 100%;
+    height: 8%;
+    margin-top: 8px;
+    border-radius: 2px;
+    text-align: left;
+   
+   
+}
+.left-side a button:hover
+{
+    background-color: var(--header_color);
+}
+.left-side a button i
+{
+    margin-right: 10px;
+}
+
+
+/*
+    * Left side of links ends here 
+    * Main space start 
+*/
+
+.container
+{
+    height: 200%;
+    position: fixed;
+    width: 78%;
+    right: 0;
+    top: 8%;
+    overflow: hidden;
+    overflow-y: scroll;
+
+    
+}
+.container::-webkit-scrollbar
+{
+    display: none;
+}
+.stories-container
+{
+    background-color: var(--header_color);
+    width: 50%;
+    height: 15%;
+    left: 11%;
+    border-radius: 10px;
+    position: absolute;
+
+}
+.stories-container button
+{
+    width: 49%;
+    height: 20%;
+    font-size: 20px;
+    background-color: transparent;
+}
+.btn-story
+{
+    color: var(--fb_blue);
+    margin-bottom: 4px solid var(--fb_blue);
+}
+.stories-container button:hover
+{
+    background-color: grey;
+    border-radius: 10px;
+}
+
+.stories
+{
+    
+    width: 100%;
+    height: 70%;
+    
+}
+.stories form
+{
+    height: 100%;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+.stories form::-webkit-scrollbar
+{
+    display: none;
+}
+/*.create-story
+{
+    height: 100%;
+    width: 20%;
+    border-radius: 10px;
+    background-color: black;
+    position: relative;
+   
+}*/
+.stories form button
+{
+    height: 100%;
+    width: 20%;
+    margin-top: 0;
+    border-radius: 10px;
+    margin-left: 5px;
+    display: inline-block;
+    background-color: black;
+    position: relative;
+}
+.stories form button:hover
+{
+    height: 100%;
+    width: 20%;
+    border-radius: 10px;
+    margin-left: 5px;
+    display: inline-block;
+    background-color: black;
+    position: relative;
+}
+
+.prof_pic
+{
+    height: 35px;
+    width: 35px;
+    border-radius: 17.5px;
+    top: 5%;
+    left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: var(--user-background);
+    overflow: hidden;
+}
+.prof_pic img
+{
+    height: 100%;
+}
+
+.story-cont
+{
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    left: 0;
+    position: absolute;
+}
+.story-cont img
+{
+    height: 100%;
+    width: 100%;
+    opacity: .5;
+    border-radius: 10px;
+}
+
+
+
+.make-post
+{
+    background-color: var(--header_color);
+    width: 50%;
+    height: 8%;
+    left: 11%;
+    top: 15.5%;
+    border-radius: 10px;
+    position: relative;
+    z-index: -1;
+    
+}
+
+.create-post-popup
+{
+    width: 40%;
+    height: 15%;
+    background-color: var(--backgroung);
+    left: 15.5%;
+    top: 3%;
+    visibility: hidden;
+    z-index: 5;
+}
+.create-post-popup .cancel
+{
+    background-color: var(--header_color);
+    color: var(--font-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 5%;
+    top: 3%;
+    width: 40px;
+    height: 40px;
+}
+.create-post-pp
+{
+    background-color: var(--user-background);
+    width: 10%;
+    height: 20%;
+    border-radius: 100px;
+    overflow: hidden;
+}
+.create-post-popup form
+{
+    height: 65%;
+}
+.create-post-popup form button
+{
+    width: 98%;
+    border-radius: 5px;
+    margin-left: 1%;
+    background-color: var(--fb_blue);
+
+}
+.post-cont
+{
+    display: flex;
+    justify-content: flex-start;
+    width: 99%;
+    height: 50%;
+    background-color: var(--backgroung);
+    color: var(--font-color);
+    border: none;
+    
+}
+.create-post-pp img
+{
+    height: 100%;
+    width: 100%;
+    color: aliceblue;
+}
+.post-invisible
+{
+    visibility: visible;
+    opacity: 1;
+}
+.create-post-popup h1
+{
+    text-align: center;
+    color: var(--font-color);
+}
+.create-post-popup h2
+{
+    left: 12%;
+    top: 15%;
+    position: absolute;
+    color: var(--font-color);
+}
+.post-pp
+{
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 30px;
+    top: 10px;
+    left: 10px;
+    margin-bottom: 15px;
+    position: inherit;
+    background-color: var(--user-background);   
+    color: var(--user-icon);
+    overflow: hidden;
+}
+.post-pp img
+{
+    width: 90%;
+    height: 100%;
+}
+.post-pop-up
+{
+    height: 50px;
+    width: 85%;
+    right: 3%;
+    top: 10%;
+    position: absolute;
+    font-size: 20px;
+    text-align: left;
+}
+.post-type
+{
+    position: relative;
+    width: 33.33%;
+    background-color: transparent;
+    text-decoration: none;
+    margin-left: 10px;
+}
+.post-type button
+{
+    position: inherit;
+    width: 30%;
+    font-size: 18px;
+    background-color: transparent;
+    cursor: pointer;
+}
+.post-type button:hover
+{
+    background-color: var(--backgroung);
+    border-radius: 5px;
+}
+.posts
+{
+    width: 61%;
+    height: 76%;
+    bottom: 0;
+    position: absolute;
+}
+.post
+{
+    height: 15%;
+    width: 82%; 
+    position: relative;
+    right: 0;
+    display: flex;
+    float: right;
+    background-color: var(--header_color);
+    margin-bottom: 1%;
+}
+#with_pic 
+{
+    height: 50%;
+}
+#without-pic .time-posted
+{
+    top: 15%;
+
+}
+.post-owner-username
+{
+    color: var(--font-color);
+    position: absolute;
+    left: 12%;
+    top: 2%;
+}
+.time-posted
+{
+    color: var(--user-background);
+    position: absolute;
+    left: 12%;
+    top: 4%;
+}
+.pic-area
+{
+    /*background-color: var(--font-color);*/
+    height: 80%;
+    width: 80%;
+    left: 10%;
+    top: 10%;
+    justify-content: center;
+    text-align: center;
+    background-color: #fff;
+    position: absolute;
+
+}
+.pic-area img
+{
+    position: absolute;
+    width: auto;
+    height: 100%;
+    display: flex;
+    
+}
+.post-summary
+{
+    height: 4%;
+    width: 100%;
+    bottom: 6%;
+    left: 0;
+    color: var(--font-color);
+    position: absolute;
+
+}
+.post-summary span
+{
+    margin-right: 22%;
+}
+.action-buttons
+{
+    height: 6%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    
+}
+.reaction
+{
+    height: 98%;
+    width: 30%;
+    top: 1%;
+    left: 2%;
+    display: flex;
+    justify-content: center;
+    color: var(--font-color);
+    position: absolute;
+    background-color: var(--backgroung);
+
+}
+.reaction span
+{
+    margin-top: 10%;
+    margin-left: 10px;
+}
+.reaction i
+{
+    margin-top: 10%;
+}
+.comment
+{
+    background-color: var(--backgroung);
+    height: 98%;
+    width: 30%;
+    top: 1%;
+    left: 34%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    background-color: var(--backgroung);
+
+}
+.comment span
+{
+    margin-top: 10%;
+    margin-left: 10px;
+}
+.comment i
+{
+    margin-top: 10%;
+}
+.share
+{
+    height: 98%;
+    width: 30%;
+    top: 1%;
+    left: 66%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    background-color: var(--backgroung);
+
+}
+.share span
+{
+    margin-top: 10%;
+    margin-left: 10px;
+}
+.share i
+{
+    margin-top: 10%;
+}
+
+.react-btns
+{
+    height: 100%;
+    width: 50%;
+    bottom: 90%;
+    position: absolute;
+    z-index: 5;
+    background-color: var(--backgroung);
+    border-radius: 2px;
+    left: 25%;
+    visibility: hidden;
+}
+.react-btns form
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.react-btns form button
+{
+    position: relative;
+    height: 36px;
+    width: 36px;
+    top: calc(100%-36px);
+    border-radius: 20px;
+}
+.react-btns form button:hover
+{
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+}
+.action-buttons:hover .react-btns
+{
+    visibility: visible;
+}
+.react-btns:hover
+{
+    background-color: #fff;
+}
+
+
+
+a 
+{
+    color: var(--font-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+a:visited
+{
+    color: var(--font-color);
+    text-decoration: none;
+}
+li
+{
+    cursor: pointer;
+}
+button
+{
+    cursor: pointer;
+}
+.hidden
+{
+    width: 20%;
+    height: 95%;
+    border-radius: 10px;
+    top: 5%;
+    right: 2%;
+    position: fixed;
+    background-color: var(--header_color);
+    box-shadow: 0px 8px 8px 8px var(--backgroung);
+    visibility: hidden;
+}
+.messesges::-webkit-scrollbar
+{
+    display: none;
+}
+
+.msg_nav
+{
+    top: 0;
+    width: 100%;
+    height: 5%;
+    position: absolute;
+    border-radius: 10px;
+}
+.msg_nav h2
+{
+    color: var(--font-color);
+    position: absolute;
+    left: 5%;
+}
+.msg_nav ul
+{
+    display: flex;
+    float: right;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: -20%;
+    right: 0;
+
+}
+.msg_nav ul li
+{
+    display: flex;
+    margin: 3%;
+    font-size: 30px;
+}
+.msg_nav .more
+{
+    position:absolute;
+    top: 10%;
+    right: 10%;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    
+}
+.msg_nav .more:hover
+{
+    background-color: var(--backgroung);   
+}
+.msg_search
+{
+    height: 5%;
+    width: 90%;
+    position: absolute;
+    left: 5%;
+    top: 6%;
+
+}
+.msg_search form
+{
+    height: 100%;
+    width: 100%;
+
+
+}
+.msg_search form .search-cont
+{
+    height: 100%;
+    width: 100%;
+    background-color: var(--backgroung);
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+}
+.search-cont i
+{
+    font-size: 30px;
+    position: absolute;
+    left: 5%;
+    margin-right: 10%;
+}
+.search-cont input
+{
+    position: absolute;
+    height: 100%;
+    top: 0;
+    width: 80%;
+    right: 0;
+    font-size: 15px;
+    color: var(--font-color);
+    background-color: transparent;
+    border-radius: 100px;
+    outline: none;
+    border: none;
+    
+}
+
+/* hidden section start*/
+
+.hidden .toggle_bns
+{
+    position: absolute;
+    top:12%;
+    height: 5%;
+    width: 100%;
+}
+
+.hidden .toggle_bns button
+{
+    width: auto;
+    font-size: 15px;
+    height: 80%;
+    margin-left: 2%;
+}
+.hidden-content
+{
+    position: absolute;
+    height: 82%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    overflow-y: scroll;
+    
+}
+.user-msgs form
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.hidden-content::-webkit-scrollbar
+{
+    display: none;
+}
+.user_msg_container
+{
+    position: relative;
+    width: 100%;
+    height: 10%;
+    margin-bottom: 1px;
+    border-radius: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: unset;
+}
+.user_msg_container:hover
+{
+    background-color: var(--backgroung);
+}
+.user_msg_container .msg_sender
+{
+    position: absolute;
+    height: 30%;
+    width: 70%;
+    left: 20%;
+    top: 30%;
+    display: flex;
+    justify-content: left;
+    font-size: 15px;
+}
+
+.msg_cont
+{
+    position: absolute;
+    height: 30%;
+    width: 70%;
+    left: 20%;
+    top: 50%;
+    font-size: 13px;
+    overflow: hidden;
+    display: flex;
+    justify-content: left;
+}
+.msg-status-dot
+{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    bottom: auto;
+    right: 5%;
+}
+.hidden-visible
+{
+    visibility: visible;   
+}
+
+.notification-container
+{
+    height:15%;
+    width: 100%;
+    margin-top: 5%;
+    position: relative;
+}
+.notification-container:hover
+{
+    background-color: var(--hover-color);
+}
+.text
+{
+    height: 100%;
+    width: 80%;
+    position: absolute;
+    right: 0;
+    color: var(--font-color);
+
+}
+.text form
+{
+    width: 100%;
+    height: 30%;
+
+    position: absolute;
+    bottom: 0%;
+}
+.text form button
+{
+    height: 100%;
+    width: 30%;
+    font-size: 80%;
+    border-radius: 5px;
+}
+
+.right-side
+{
+    position: fixed;
+    height: 92%;
+    width: 15%;
+    background-color: var(--header_color);
+    right: 0;
+    overflow: hidden;
+    overflow-y: scroll;
+    bottom: 0;
+}
+.right-side::-webkit-scrollbar
+{
+    display: none;
+}
+.adds-area
+{
+    height: 30%;
+    width: 100%;
+}
+
+.birthday-area
+{
+    height: 10%;
+    width: 100%;
+   
+}
+.birthday-area img
+{
+    height: 30%;
+    width: auto;
+    margin-left: 10%;
+    margin-top: 5%;
+    top: auto;
+}
+.birthday-area span
+{
+    color: var(--font-color);
+}
+.right-side .friends
+{
+    height: 70%;
+    width: 100%;
+    opacity: .5;
+}
+.friends .user_msg_container span
+{
+    left: 30%;
+    position: absolute;
+
+}
+hr
+{
+    border: 1px solid grey;
+    width: 90%;
+    margin-top: 2%;
+}
+/*
+    - More about the user
+*/
+.user-about
+{
+    height: 30%;
+}
+
+.user-account
+{
+    position: absolute;
+    height: 40%;
+    width: 80%;
+    left: 10%;
+    top: 5%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px 4px var(--backgroung);
+    border: none;
+}
+.user-account span
+{
+    position: absolute;
+    top: 5%;
+    left: 24%;
+    color: #fff;
+}
+.user-account hr
+{
+    position: absolute;
+    bottom: 45%;
+    width: 80%;
+    left: 10%;
+}
+.user-about a 
+{
+    height: 20%;
+    width: 80%;
+    position: absolute;
+    left: 10%;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+}
+.user-about a:hover
+{
+    background-color: var(--hover-color);
+}
+.user-about a span
+{
+    position: absolute;
+    top: 20%;
+    left: 30%;
+}
+@media (max-width:858px)
+{
+    .left-side
+    {
+        display: none;
+    }
+    .container
+    {
+        width: 100%;
+    }
+    .make-post
+    {
+        width: 90%;
+        left: 5%;
+    }
+    .stories-container
+    {
+        width: 90%;
+        left: 5%;
+    }
+    .posts
+    {
+        width: 90%;
+        left: 5%;
+    }
+    .post
+    {
+        width: 100%;
+        left: 0;
+        position: absolute;
+    }
+    .second-list
+    {
+        display: none;
+    }
+    .right-side
+    {
+        visibility: hidden;
+    }
+    .search-container
+    {
+        width: 5%;
+        height: 70%;
+        border-radius: 30px;
+
+
+    }
+    .search-container form
+    {
+        visibility: hidden;
+    }
+    .search-container img
+    {
+        height: 60%;
+        width: auto;
+        left: 20%;
+    }
+}
