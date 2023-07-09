@@ -10,6 +10,7 @@ import com.facebook.entities.FacebookUser;
 import static com.facebook.entities.FacebookUser_.friends;
 import com.facebook.entities.Friend;
 import com.facebook.entities.Post;
+import com.facebook.processor.ProcessorLocal;
 import com.facebook.sessinbeans.FacebookUserFacadeLocal;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -28,6 +29,9 @@ import javax.servlet.http.HttpSession;
  * @author andil
  */
 public class SignupServlet extends HttpServlet {
+
+    @EJB
+    private ProcessorLocal processor;
 
     @EJB
     private FacebookUserFacadeLocal facebookUserFacade;
@@ -101,7 +105,7 @@ public class SignupServlet extends HttpServlet {
         user.setFriends(friends);
         user.setPosts(posts);
         user.setMessages(messages);
-        if(isCellphoneNumber(emailOrPassword))
+        if(processor.isCellphoneNumber(emailOrPassword))
         {
            user.setCellphoneNumber(Long.parseLong(emailOrPassword));
         }else
@@ -110,32 +114,6 @@ public class SignupServlet extends HttpServlet {
         }
         
         return user;
-    }
-    private boolean isCellphoneNumber(String mobileOrCellphone)
-    {
-        boolean isCellNo = false;
-        
-        int length = mobileOrCellphone.length();
-        if(mobileOrCellphone.length() == 10)
-        {
-            for(int i = 0; i < length; i++)
-            {
-                if(Character.isDigit(mobileOrCellphone.charAt(i)))
-                {
-                    isCellNo = true;
-                }
-                else
-                {
-                    isCellNo = false;
-                    break;
-                }
-            }
-        }else
-        {
-            isCellNo = false;
-        }
-        
-        return isCellNo;
     }
 
 }
