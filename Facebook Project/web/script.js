@@ -2,7 +2,8 @@ const days = document.getElementById("days");
 const month = document.getElementById("month");
 const year = document.getElementById("year");
 
-
+let session = window.sessionStorage.getItem("pass");
+//alert(sess);
     let numOfDays = new Date(new Date().getFullYear(),new Date().getMonth()+1,0).getDate();
     let monthName = new Date().getMonth();
     let currentYear = new Date().getFullYear();

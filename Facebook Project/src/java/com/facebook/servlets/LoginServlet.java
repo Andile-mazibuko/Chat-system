@@ -9,6 +9,7 @@ import com.facebook.entities.FacebookUser;
 import com.facebook.processor.ProcessorLocal;
 import com.facebook.sessinbeans.FacebookUserFacadeLocal;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
@@ -29,7 +30,30 @@ public class LoginServlet extends HttpServlet {
 
     @EJB
     private FacebookUserFacadeLocal facebookUserFacade;
-
+    
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet SignupServlet</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<script>"
+                    + "window.sessionStorage.setItem(\"pass\", \"incorrect\");"
+                    + "alert('hi');"
+                    + "setTimeout(() => {\n" +
+"            window.location.href = 'index.html';\n" +
+"         }, 0);"
+                    + "</script>");
+            out.println("<h1>Servlet SignupServlet at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
+    }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException 
@@ -46,9 +70,14 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         FacebookUser user = processor.findCorrectUser(processor.findMatchingUsers(emailOrMobile), password);
-
-        session.setAttribute("user", user);
-        response.sendRedirect("DashboardSesvlet.com");
+        if(user == null)
+        {
+            processRequest(request, response);
+        }else{
+            session.setAttribute("user", user);
+            response.sendRedirect("DashboardSesvlet.com");
+    
+        }
     }
     
 

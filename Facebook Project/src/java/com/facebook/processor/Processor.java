@@ -71,7 +71,7 @@ public class Processor implements ProcessorLocal{
     }
     public FacebookUser findCorrectUser(List<FacebookUser>matchingUsers, String password)
     {
-        FacebookUser user = new FacebookUser();
+        FacebookUser user = null;
         for(FacebookUser facebookUser : matchingUsers)
         {
             if(facebookUser.getPassword().equals(password))
