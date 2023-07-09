@@ -4,6 +4,7 @@
     Author     : andil
 --%>
 
+<%@page import="com.facebook.entities.FacebookUser"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,6 +19,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="body" class="body">
+    
+    <%
+        FacebookUser user = (FacebookUser)session.getAttribute("user");
+        String firstName = user.getFirstName();
+        String lastName = user.getLastName();
+    %>
     <header>
         <div class="logo-container">
             <img src="facebook.png" alt="">
@@ -49,7 +56,7 @@
     <div class="left-side">
         
         <a href="#"> 
-            <button><i class="fa-solid fa-user"></i> Andile Mazibuko</button>
+            <button><i class="fa-solid fa-user"></i> <%=firstName+" "+lastName%></button>
         </a>
         <a href="#"> 
             <button> <i class="fa-solid fa-bookmark" style="color: #d335f3;"></i>Saved</button>
@@ -174,7 +181,7 @@
             <div class="post-pp">
                 <img src="user.png" alt="" >
             </div>
-                <button onclick="showPopUp()" class="post-pop-up">What's on your mind, Andile?</button>
+            <button onclick="showPopUp()" class="post-pop-up">What's on your mind, <%=firstName%>?</button>
             <hr>
             <a href="" class="post-type">
                 <button ><i class="fa-solid fa-play" style="color: #db1414;"></i> Live Video</button>
@@ -202,6 +209,8 @@
         </div>
         
         <div class="posts">
+            <!--1st post-->
+            <%for(int i = 0; i < 10;i++){%>
             <div class="post pic" id="with_pic">
                 <div class="post-pp">
                     <img src="user.png" alt="">
@@ -249,166 +258,9 @@
                 </div>
             </div>
 
-            <!--  2nd Post-->
-            <div class="post pic" id="with_pic">
-                <div class="post-pp">
-                    <img src="user.png" alt="">
-                </div>
-                <div class="post-owner-username">
-                    Andile Mazibuko
-                </div>
-                
-                <div class="time-posted">
-                    9h ago
-                </div>
-                <div class="pic-area">
-                    <img src="IMG_20230217_012654.png" alt="">
-                </div>
-                <div class="post-summary">
-                    <i class="fa-solid fa-thumbs-up" style="color: rgb(15, 15, 226);"></i>
-                    <i class="fa-solid fa-heart" style="color: #ff0000;"></i>
-                    <span>296</span> <span>6 comments</span><span>2 shares</span>
-                </div>
-                <div class="action-buttons">
-                    <div class="react-btns">
-                        <form action="">
-                            <button type="submit" name="reaction" value="like"><i class="fa-solid fa-thumbs-up" style="color: rgb(15, 15, 226);"></i></button>
-                            <button type="submit" name="reaction" value="love"><i class="fa-solid fa-heart" style="color: #ff0000;"></i></button> 
-                            <button type="submit" name="reaction" value="angry"><i class="fa-solid fa-face-angry" style="color: #e79118;"></i></button> 
-                            <button type="submit" name="reaction" value="sad"><i class="fa-solid fa-face-sad-tear" style="color: #eca918;"></i></button>
-                        </form>
-                        
-                    </div>
-                    <div class="reaction">
-                        <a href="#"><i class="fa-solid fa-thumbs-up" style="color: #fbfcfe;"></i> <span>Lke</span></a>
-                        
-                    </div>
-                    
-
-                    <div class="comment">
-                        <a href="#"><i class="fa-regular fa-comment" style="color: #ffffff;"></i><span>comment</span></a>
-                    </div>
-                    <div class="share">
-                        <a href="#">
-                            <i class="fa-solid fa-share" style="color: #cccccc;"></i><span>Share</span></a>
-                            
-                    </div>
-                
-                </div>
-            </div>
-
-            <!--  3rd Post-->
-            <div class="post pic" id="with_pic">
-                <div class="post-pp">
-                    <img src="user.png" alt="">
-                </div>
-                <div class="post-owner-username">
-                    Andile Mazibuko
-                </div>
-                
-                <div class="time-posted">
-                    9h ago
-                </div>
-                <div class="pic-area">
-                    <img src="IMG_20230217_012654.png" alt="">
-                </div>
-                <div class="post-summary">
-                    <i class="fa-solid fa-thumbs-up" style="color: rgb(15, 15, 226);"></i>
-                    <i class="fa-solid fa-heart" style="color: #ff0000;"></i>
-                    <span>296</span> <span>6 comments</span><span>2 shares</span>
-                </div>
-                <div class="action-buttons">
-                    <div class="react-btns">
-                        <form action="">
-                            <button type="submit" name="reaction" value="like"><i class="fa-solid fa-thumbs-up" style="color: rgb(15, 15, 226);"></i></button>
-                            <button type="submit" name="reaction" value="love"><i class="fa-solid fa-heart" style="color: #ff0000;"></i></button> 
-                            <button type="submit" name="reaction" value="angry"><i class="fa-solid fa-face-angry" style="color: #e79118;"></i></button> 
-                            <button type="submit" name="reaction" value="sad"><i class="fa-solid fa-face-sad-tear" style="color: #eca918;"></i></button>
-                        </form>
-                        
-                    </div>
-                    <div class="reaction">
-                        <a href="#"><i class="fa-solid fa-thumbs-up" style="color: #fbfcfe;"></i> <span>Lke</span></a>
-                        
-                    </div>
-                    
-
-                    <div class="comment">
-                        <a href="#"><i class="fa-regular fa-comment" style="color: #ffffff;"></i><span>comment</span></a>
-                    </div>
-                    <div class="share">
-                        <a href="#">
-                            <i class="fa-solid fa-share" style="color: #cccccc;"></i><span>Share</span></a>
-                            
-                    </div>
-                
-                </div>
-            </div>
-            <!--  4th Post-->
-            <div class="post pic" id="with_pic">
-                <div class="post-pp">
-                    <img src="user.png" alt="">
-                </div>
-                <div class="post-owner-username">
-                    Andile Mazibuko
-                </div>
-                
-                <div class="time-posted">
-                    9h ago
-                </div>
-                <div class="pic-area">
-                    <img src="IMG_20230217_012654.png" alt="">
-                </div>
-                <div class="post-summary">
-                    <i class="fa-solid fa-thumbs-up" style="color: rgb(15, 15, 226);"></i>
-                    <i class="fa-solid fa-heart" style="color: #ff0000;"></i>
-                    <span>296</span> <span>6 comments</span><span>2 shares</span>
-                </div>
-                <div class="action-buttons">
-                    
-                    <div class="reaction">
-                        <a href="#"><i class="fa-solid fa-thumbs-up" style="color: #fbfcfe;"></i> <span>Lke</span></a>
-                        
-                    </div>
-                    <div class="react-btns">
-                        <form action="">
-                            <button type="submit" name="reaction" value="like"><i class="fa-solid fa-thumbs-up" style="color: rgb(15, 15, 226);"></i></button>
-                            <button type="submit" name="reaction" value="love"><i class="fa-solid fa-heart" style="color: #ff0000;"></i></button> 
-                            <button type="submit" name="reaction" value="angry"><i class="fa-solid fa-face-angry" style="color: #e79118;"></i></button> 
-                            <button type="submit" name="reaction" value="sad"><i class="fa-solid fa-face-sad-tear" style="color: #eca918;"></i></button>
-                        </form>
-                        
-                    </div>
-                    
-
-                    <div class="comment">
-                        <a href="#"><i class="fa-regular fa-comment" style="color: #ffffff;"></i><span>comment</span></a>
-                    </div>
-                    <div class="share">
-                        <a href="#">
-                            <i class="fa-solid fa-share" style="color: #cccccc;"></i><span>Share</span></a>
-                            
-                    </div>
-                
-                </div>
-            </div>
-
+            <%}%>
             
-            <!--  6th Post-->
-            <div class="post" id="without-pic">
-                <div class="post-pp">
-                    <img src="user.png" alt="">
-                </div>
-                <div class="post-owner-username">
-                    Andile Mazibuko
-                </div>
-                
-                <div class="time-posted">
-                    9h ago
-                </div>
-
-
-            </div>
+            
             <div class="post pic" id="with_pic"></div>
             <div class="post pic" id="with_pic"></div>
             
@@ -613,6 +465,7 @@
             
         </div>
         <div class="hidden-content">
+            <%for(int i =0; i < 5; i++){%>
             <form action="">
 
                 <!--start-->
@@ -635,216 +488,7 @@
                     <div style="background-color: #fff;" class="msg-status-dot"></div>
                 -->
             </button>
-            <button type="submit" class="user_msg_container">
-                <div class="post-pp">
-                    <img src="user.png" alt="">
-                </div> 
-                
-                <span class="msg_sender">
-                    <b>Andile Mazibuko</b>
-                </span>
-                <span style="color: rgb(73, 119, 247)" class="msg_cont"><b>messge</b></span>
-                <!--
-                    for read messeges
-                <p style="color: rgb(212, 209, 209)">messge</p>
-                -->
-                <div style="background-color: rgb(73, 119, 247);" class="msg-status-dot"></div>
-                <!--
-                    for read messeges
-                    <div style="background-color: #fff;" class="msg-status-dot"></div>
-                -->
-            </button>
-            <button type="submit" class="user_msg_container">
-                <div class="post-pp">
-                    <img src="user.png" alt="">
-                </div> 
-                
-                <span class="msg_sender">
-                    <b>Andile Mazibuko</b>
-                </span>
-                <span style="color: rgb(73, 119, 247)" class="msg_cont"><b>messge</b></span>
-                <!--
-                    for read messeges
-                <p style="color: rgb(212, 209, 209)">messge</p>
-                -->
-                <div style="background-color: rgb(73, 119, 247);" class="msg-status-dot"></div>
-                <!--
-                    for read messeges
-                    <div style="background-color: #fff;" class="msg-status-dot"></div>
-                -->
-            </button>
-            <button type="submit" class="user_msg_container">
-                <div class="post-pp">
-                    <img src="user.png" alt="">
-                </div> 
-                
-                <span class="msg_sender">
-                    <b>Andile Mazibuko</b>
-                </span>
-                <span style="color: rgb(73, 119, 247)" class="msg_cont"><b>messge</b></span>
-                <!--
-                    for read messeges
-                <p style="color: rgb(212, 209, 209)">messge</p>
-                -->
-                <div style="background-color: rgb(73, 119, 247);" class="msg-status-dot"></div>
-                <!--
-                    for read messeges
-                    <div style="background-color: #fff;" class="msg-status-dot"></div>
-                -->
-            </button>
-            <button type="submit" class="user_msg_container">
-                <div class="post-pp">
-                    <img src="user.png" alt="">
-                </div> 
-                
-                <span class="msg_sender">
-                    <b>Andile Mazibuko</b>
-                </span>
-                <span style="color: rgb(73, 119, 247)" class="msg_cont"><b>messge</b></span>
-                <!--
-                    for read messeges
-                <p style="color: rgb(212, 209, 209)">messge</p>
-                -->
-                <div style="background-color: rgb(73, 119, 247);" class="msg-status-dot"></div>
-                <!--
-                    for read messeges
-                    <div style="background-color: #fff;" class="msg-status-dot"></div>
-                -->
-            </button>
-            <button type="submit" class="user_msg_container">
-                <div class="post-pp">
-                    <img src="user.png" alt="">
-                </div> 
-                
-                <span class="msg_sender">
-                    <b>Andile Mazibuko</b>
-                </span>
-                <span style="color: rgb(73, 119, 247)" class="msg_cont"><b>messge</b></span>
-                <!--
-                    for read messeges
-                <p style="color: rgb(212, 209, 209)">messge</p>
-                -->
-                <div style="background-color: rgb(73, 119, 247);" class="msg-status-dot"></div>
-                <!--
-                    for read messeges
-                    <div style="background-color: #fff;" class="msg-status-dot"></div>
-                -->
-            </button>
-            <button type="submit" class="user_msg_container">
-                <div class="post-pp">
-                    <img src="user.png" alt="">
-                </div> 
-                
-                <span class="msg_sender">
-                    <b>Andile Mazibuko</b>
-                </span>
-                <span style="color: rgb(73, 119, 247)" class="msg_cont"><b>messge</b></span>
-                <!--
-                    for read messeges
-                <p style="color: rgb(212, 209, 209)">messge</p>
-                -->
-                <div style="background-color: rgb(73, 119, 247);" class="msg-status-dot"></div>
-                <!--
-                    for read messeges
-                    <div style="background-color: #fff;" class="msg-status-dot"></div>
-                -->
-            </button>
-            <button type="submit" class="user_msg_container">
-                <div class="post-pp">
-                    <img src="user.png" alt="">
-                </div> 
-                
-                <span class="msg_sender">
-                    <b>Andile Mazibuko</b>
-                </span>
-                <span style="color: rgb(73, 119, 247)" class="msg_cont"><b>messge</b></span>
-                <!--
-                    for read messeges
-                <p style="color: rgb(212, 209, 209)">messge</p>
-                -->
-                <div style="background-color: rgb(73, 119, 247);" class="msg-status-dot"></div>
-                <!--
-                    for read messeges
-                    <div style="background-color: #fff;" class="msg-status-dot"></div>
-                -->
-            </button>
-            <button type="submit" class="user_msg_container">
-                <div class="post-pp">
-                    <img src="user.png" alt="">
-                </div> 
-                
-                <span class="msg_sender">
-                    <b>Andile Mazibuko</b>
-                </span>
-                <span style="color: rgb(73, 119, 247)" class="msg_cont"><b>messge</b></span>
-                <!--
-                    for read messeges
-                <p style="color: rgb(212, 209, 209)">messge</p>
-                -->
-                <div style="background-color: rgb(73, 119, 247);" class="msg-status-dot"></div>
-                <!--
-                    for read messeges
-                    <div style="background-color: #fff;" class="msg-status-dot"></div>
-                -->
-            </button>
-            <button type="submit" class="user_msg_container">
-                <div class="post-pp">
-                    <img src="user.png" alt="">
-                </div> 
-                
-                <span class="msg_sender">
-                    <b>Andile Mazibuko</b>
-                </span>
-                <span style="color: rgb(73, 119, 247)" class="msg_cont"><b>messge</b></span>
-                <!--
-                    for read messeges
-                <p style="color: rgb(212, 209, 209)">messge</p>
-                -->
-                <div style="background-color: rgb(73, 119, 247);" class="msg-status-dot"></div>
-                <!--
-                    for read messeges
-                    <div style="background-color: #fff;" class="msg-status-dot"></div>
-                -->
-            </button>
-            <button type="submit" class="user_msg_container">
-                <div class="post-pp">
-                    <img src="user.png" alt="">
-                </div> 
-                
-                <span class="msg_sender">
-                    <b>Andile Mazibuko</b>
-                </span>
-                <span style="color: rgb(73, 119, 247)" class="msg_cont"><b>messge</b></span>
-                <!--
-                    for read messeges
-                <p style="color: rgb(212, 209, 209)">messge</p>
-                -->
-                <div style="background-color: rgb(73, 119, 247);" class="msg-status-dot"></div>
-                <!--
-                    for read messeges
-                    <div style="background-color: #fff;" class="msg-status-dot"></div>
-                -->
-            </button>
-            <button type="submit" class="user_msg_container">
-                <div class="post-pp">
-                    <img src="user.png" alt="">
-                </div> 
-                
-                <span class="msg_sender">
-                    <b>Andile Mazibuko</b>
-                </span>
-                <span style="color: rgb(73, 119, 247)" class="msg_cont"><b>messge</b></span>
-                <!--
-                    for read messeges
-                <p style="color: rgb(212, 209, 209)">messge</p>
-                -->
-                <div style="background-color: rgb(73, 119, 247);" class="msg-status-dot"></div>
-                <!--
-                    for read messeges
-                    <div style="background-color: #fff;" class="msg-status-dot"></div>
-                -->
-            </button>
-
+            <%}%>
             <!--The end-->
         </form>
         </div>
@@ -908,7 +552,7 @@
             <div class="prof_pic">
                 <img src="user.png" alt="">
             </div>
-            <span>Andile Mazibuko</span>
+            <span><%=firstName +" "+ lastName%> </span>
             <hr>
         
         </div>

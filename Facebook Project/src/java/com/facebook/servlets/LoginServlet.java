@@ -10,8 +10,6 @@ import com.facebook.processor.ProcessorLocal;
 import com.facebook.sessinbeans.FacebookUserFacadeLocal;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -31,7 +29,7 @@ public class LoginServlet extends HttpServlet {
     @EJB
     private FacebookUserFacadeLocal facebookUserFacade;
     
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response,String username)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
@@ -44,11 +42,10 @@ public class LoginServlet extends HttpServlet {
             out.println("<body>");
             out.println("<script>"
                     + "window.sessionStorage.setItem(\"pass\", \"incorrect\");"
-                    + "setTimeout(() => {\n" +
-"            window.location.href = 'index.html';\n" +
-"         }, 0);"
+                    + "window.sessionStorage.setItem('username', '"+username+"');"
+                    + "setTimeout(() => {\n" 
+                    + "window.location.href = 'index.html';}, 0);"
                     + "</script>");
-            out.println("<h1>Servlet SignupServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -71,7 +68,7 @@ public class LoginServlet extends HttpServlet {
         FacebookUser user = processor.findCorrectUser(processor.findMatchingUsers(emailOrMobile), password);
         if(user == null)
         {
-            processRequest(request, response);
+            processRequest(request, response,emailOrMobile);
         }else{
             session.setAttribute("user", user);
             response.sendRedirect("DashboardSesvlet.com");

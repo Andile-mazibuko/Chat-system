@@ -7,6 +7,7 @@
     --shadow: rgb(185, 185, 185);
     --fb_blue : rgb(73, 119, 247);
     --create-account: rgb(50, 215, 28);
+    --error-color: red;
 }
 body
 {
@@ -50,6 +51,10 @@ body
 {
     border: 2px solid var(--fb_blue);   
     outline: none;
+}
+.input-error
+{
+    border: 2px solid var(--error-color);
 }
 #submit-btn
 {
