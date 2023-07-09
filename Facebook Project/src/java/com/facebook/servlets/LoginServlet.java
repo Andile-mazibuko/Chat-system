@@ -44,7 +44,6 @@ public class LoginServlet extends HttpServlet {
             out.println("<body>");
             out.println("<script>"
                     + "window.sessionStorage.setItem(\"pass\", \"incorrect\");"
-                    + "alert('hi');"
                     + "setTimeout(() => {\n" +
 "            window.location.href = 'index.html';\n" +
 "         }, 0);"
