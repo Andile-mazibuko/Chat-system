@@ -117,3 +117,47 @@ const year = document.getElementById("year");
                 return false;
             }          
     }
+    
+        function showPopUp()
+        {
+            let makePost = document.getElementById("post-visibility");
+
+            makePost.classList.toggle("post-invisible");
+            
+        }
+     
+        function toogleHidden(id)
+        {
+            let notif = document.getElementById("notif-hidden");
+            let notifBtn = document.getElementById("notif");
+            let msgbtn = document.getElementById("msg-btn");
+            let msgs = document.getElementById("msgs");
+            let userAbout = document.getElementById("user-about");
+
+            if(id == 'notifications')
+            {
+                notifBtn.classList.toggle("btn-active");
+                notif.classList.toggle("hidden-visible");
+                msgbtn.classList.remove("btn-active");
+                msgs.classList.remove("hidden-visible");  
+                userAbout.classList.remove("hidden-visible");
+
+            }else if(id == 'messeges')
+            {
+                msgs.classList.toggle("hidden-visible");
+                msgbtn.classList.toggle("btn-active");
+                notifBtn.classList.remove("btn-active");
+                notif.classList.remove("hidden-visible");
+                userAbout.classList.remove("hidden-visible");
+
+            }else if(id == 'user-about')
+            {
+                userAbout.classList.toggle("hidden-visible");
+                notifBtn.classList.remove("btn-active");
+                notif.classList.remove("hidden-visible");
+                msgbtn.classList.remove("btn-active");
+                msgs.classList.remove("hidden-visible");  
+                
+            }
+            
+        }
