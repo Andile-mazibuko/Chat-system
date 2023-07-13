@@ -203,7 +203,8 @@
             </div><h2>Andile Mazibuko</h2> 
             <form action="">
                 <input type="text" name="post-content" placeholder="What's on your mind, Andile?" class="post-cont">
-                <hr>
+                <input type="file" name="post-file" id="file" value="Upload Image">
+                <label for="file">Upload Image</label>
                 <button type="submit" value="">Post</button>
             </form> 
         </div>

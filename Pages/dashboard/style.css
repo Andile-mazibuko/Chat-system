@@ -429,16 +429,25 @@ button
 }
 .create-post-popup form
 {
-    height: 65%;
+    height: 75%;
 }
+
+.create-post-popup form #file
+{
+    color: #fff;
+    
+}
+
 .create-post-popup form button
 {
     width: 98%;
     border-radius: 5px;
     margin-left: 1%;
+    margin-bottom: 0%;
     background-color: var(--fb_blue);
 
 }
+
 .post-cont
 {
     display: flex;
