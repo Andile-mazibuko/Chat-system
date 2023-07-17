@@ -2,7 +2,7 @@
 {
     --backgroung : rgb(19, 19, 19);
     --fb_blue : rgb(73, 119, 247);
-    --header_color  : rgb(27, 27, 27);
+    --header_color  : rgb(37, 37, 37);
     --font-color : rgb(212, 209, 209);
     --user-icon : white;
     --user-background : rgba(179, 176, 176, 0.884); 
@@ -213,11 +213,12 @@ button
 .left-side
 {
     position: fixed;
-    height: 93%;
+    height: 92%;
     width: 20%;
     bottom: 0;
+    left: 0;
     overflow-y: scroll;
-   
+    background-color: var(--header_color);
 }
 .left-side a
 {
@@ -234,12 +235,12 @@ button
     margin-top: 8px;
     border-radius: 2px;
     text-align: left;
-   
+    background-color: var(--header_color);
    
 }
 .left-side a button:hover
 {
-    background-color: var(--header_color);
+    background-color: var(--hover-color);
 }
 .left-side a button i
 {

@@ -1,2 +1,71 @@
 @import "style.css";
 
+.results
+{
+    width: 80%;
+    height: 93%;
+    position: absolute;
+    top: 7%;
+    right: 0;
+    overflow: hidden;
+    
+}
+.user-container
+{
+    width: 60%;
+    height: 15%;
+    position: relative;
+    border-radius: 5px;
+    margin-top: 1%;
+    margin-left: 20%;
+    background-color: var(--header_color);
+}
+.prof_pic
+{
+    height: 100px;
+    width: 100px;
+    border-radius:50px ;
+    left: 2%;
+}
+.user-description
+{
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    right: 0;
+    overflow: hidden;
+    
+}
+.user-description h4
+{
+    color: var(--font-color);
+    height: 20%;
+    width: 70%;
+    position: relative;
+}
+.user-description p
+{
+    color: var(--font-color);
+    height: 50%;
+    width: 70%;
+    position: relative;
+    overflow: hidden;
+}
+.user-description form
+{
+    position: absolute;
+    right: 1%;
+    top: 25%;
+    height: 35%;
+    width: 25%;
+    
+}
+.user-description form button
+{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    font-size: large;
+    color: var(--font-color);
+    background-color: var(--fb_blue);
+}
