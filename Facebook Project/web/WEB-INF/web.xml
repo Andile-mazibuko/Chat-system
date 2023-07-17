@@ -12,6 +12,10 @@
         <servlet-name>DashboardSesvlet</servlet-name>
         <servlet-class>com.facebook.servlets.DashboardSesvlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SearchServlet</servlet-name>
+        <servlet-class>com.facebook.servlets.SearchServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SignupServlet</servlet-name>
         <url-pattern>/SignupServlet.com</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>DashboardSesvlet</servlet-name>
         <url-pattern>/DashboardSesvlet.com</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchServlet</servlet-name>
+        <url-pattern>/SearchServlet.com</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

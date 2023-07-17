@@ -3,7 +3,7 @@ const month = document.getElementById("month");
 const year = document.getElementById("year");
 const loginUsername = document.getElementById("username");
 
-    
+/*    
 let session = window.sessionStorage.getItem("pass");
 let username = window.sessionStorage.getItem("username");
 
@@ -11,7 +11,7 @@ let username = window.sessionStorage.getItem("username");
     {
         loginUsername.value = username;
         alert("Incorrect log in details. Please provide correct log in datails");
-    }
+    }*/
     let numOfDays = new Date(new Date().getFullYear(),new Date().getMonth()+1,0).getDate();
     let monthName = new Date().getMonth();
     let currentYear = new Date().getFullYear();

@@ -12,7 +12,6 @@ import com.facebook.entities.Post;
 import com.facebook.processor.ProcessorLocal;
 import com.facebook.sessinbeans.FacebookUserFacadeLocal;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
