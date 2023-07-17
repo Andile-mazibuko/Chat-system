@@ -31,7 +31,7 @@
         </div>
         <div class="search-container">
             <img src="search.svg" alt="">
-            <form action="" method="">
+            <form action="SearchServlet.com" method="post">
                 <input type="search" name="search" id="search-main" placeholder="Search anything">
             </form>
         </div>
