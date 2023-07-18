@@ -22,10 +22,13 @@ public class Friend implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "friend_id")
+    @Column(name = "friendship_id")
     private Long id;
     
     @Column(name = "user_id")
+    private Long user;
+    
+    @Column(name = "friend_id")
     private Long friend;
     
     @Column(name = "friendship_status")
@@ -56,6 +59,14 @@ public class Friend implements Serializable {
 
     public void setFriendshipStatus(String friendshipStatus) {
         this.friendshipStatus = friendshipStatus;
+    }
+
+    public Long getUser() {
+        return user;
+    }
+
+    public void setUser(Long user) {
+        this.user = user;
     }
     
 }

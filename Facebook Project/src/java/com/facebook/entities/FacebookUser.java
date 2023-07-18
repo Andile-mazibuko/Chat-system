@@ -44,11 +44,7 @@ public class FacebookUser implements Serializable {
     
     @Column(name = "gender")
     private String gender;
-    
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "user_friend", joinColumns = @JoinColumn(name = "user_id"),inverseJoinColumns = @JoinColumn(name = "friend_id"))
-    private List<Friend> friends;
-    
+
     @OneToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "user_post", joinColumns = @JoinColumn(name = "user_id"),inverseJoinColumns = @JoinColumn(name = "post_id"))
     private List<Post> posts;
@@ -111,13 +107,6 @@ public class FacebookUser implements Serializable {
         this.gender = gender;
     }
 
-    public List<Friend> getFriends() {
-        return friends;
-    }
-
-    public void setFriends(List<Friend> friends) {
-        this.friends = friends;
-    }
 
     public List<Post> getPosts() {
         return posts;

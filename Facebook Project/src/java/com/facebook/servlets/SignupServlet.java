@@ -70,14 +70,15 @@ public class SignupServlet extends HttpServlet {
         FacebookUser user = createUser(firstName, lastName, gender, date, password, mobileORemail);
         
         facebookUserFacade.create(user);
-        session.setAttribute(lastName, date);
+        session.setAttribute("user", user);
+        response.sendRedirect("DashboardSesvlet.com");
         
     }
     private FacebookUser createUser(String firstname,String lastName,String gender,Date dateofBirth,String password,String emailOrPassword)
     {
         List<FacebookMessage> messages = new ArrayList<>();
         List<Post> posts = new ArrayList<>();
-        List<Friend> friends = new ArrayList<>();
+        //List<Friend> friends = new ArrayList<>();
         FacebookUser user = new FacebookUser();
         
         user.setFirstName(firstname);
@@ -85,7 +86,7 @@ public class SignupServlet extends HttpServlet {
         user.setGender(gender);
         user.setDateOfBirth(dateofBirth);
         user.setPassword(password);
-        user.setFriends(friends);
+        //user.setFriends(friends);
         user.setPosts(posts);
         user.setMessages(messages);
         if(processor.isCellphoneNumber(emailOrPassword))

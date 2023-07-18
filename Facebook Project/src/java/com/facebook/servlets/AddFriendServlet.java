@@ -6,12 +6,12 @@
 package com.facebook.servlets;
 
 import com.facebook.entities.FacebookUser;
+import com.facebook.entities.Friend;
 import com.facebook.processor.ProcessorLocal;
 import com.facebook.sessinbeans.FacebookUserFacadeLocal;
+import com.facebook.sessinbeans.FriendFacadeLocal;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -23,26 +23,31 @@ import javax.servlet.http.HttpSession;
  *
  * @author andil
  */
-public class SearchServlet extends HttpServlet {
-
-    @EJB
-    private ProcessorLocal processor;
+public class AddFriendServlet extends HttpServlet {
 
     @EJB
     private FacebookUserFacadeLocal facebookUserFacade;
 
-    
+    @EJB
+    private FriendFacadeLocal friendFacade;
+
+    @EJB
+    private ProcessorLocal processor;
+
+
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet SearchServlet</title>");            
+            out.println("<title>Servlet AddFriendServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet SearchServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet AddFriendServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -61,11 +66,15 @@ public class SearchServlet extends HttpServlet {
     throws ServletException, IOException 
     {
         HttpSession session = request.getSession();
-        String search = request.getParameter("search");
+        FacebookUser user = (FacebookUser)session.getAttribute("user");
+        Long friendId = Long.parseLong(request.getParameter("friendId"));
+           
+        Friend friendship = processor.createFacebookFriendship(user.getId(),friendId);
+        friendFacade.create(friendship);
+        //user.getFriends().add(friendship);
         
-        session.setAttribute("searchResults", processor.searchForUsers(search) );
-        
-        request.getRequestDispatcher("searchResults.jsp").forward(request, response);
+        facebookUserFacade.edit(user);
+        response.sendRedirect("DashboardSesvlet.com");
     }
-    
+   
 }

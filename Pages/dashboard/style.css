@@ -218,7 +218,7 @@ button
     bottom: 0;
     left: 0;
     overflow-y: scroll;
-    background-color: var(--header_color);
+    background-color: var(--backgroung);
 }
 .left-side a
 {
@@ -235,7 +235,7 @@ button
     margin-top: 8px;
     border-radius: 2px;
     text-align: left;
-    background-color: var(--header_color);
+    /*background-color: var(--header_color);*/
    
 }
 .left-side a button:hover
@@ -998,7 +998,7 @@ button
     position: fixed;
     height: 92%;
     width: 15%;
-    background-color: var(--header_color);
+    background-color: var(--backgroung);
     right: 0;
     overflow: hidden;
     overflow-y: scroll;

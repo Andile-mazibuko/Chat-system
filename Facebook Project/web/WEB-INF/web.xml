@@ -16,6 +16,10 @@
         <servlet-name>SearchServlet</servlet-name>
         <servlet-class>com.facebook.servlets.SearchServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddFriendServlet</servlet-name>
+        <servlet-class>com.facebook.servlets.AddFriendServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SignupServlet</servlet-name>
         <url-pattern>/SignupServlet.com</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>SearchServlet</servlet-name>
         <url-pattern>/SearchServlet.com</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddFriendServlet</servlet-name>
+        <url-pattern>/AddFriendServlet.com</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

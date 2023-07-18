@@ -6,6 +6,7 @@
 package com.facebook.processor;
 
 import com.facebook.entities.FacebookUser;
+import com.facebook.entities.Friend;
 import com.facebook.sessinbeans.FacebookUserFacadeLocal;
 import java.util.ArrayList;
 import java.util.List;
@@ -83,6 +84,45 @@ public class Processor implements ProcessorLocal{
         }
         return user;
     }
-    
+
+    @Override
+    public Friend createFacebookFriendship(Long user,Long friendId) 
+    {
+        Friend friendship = new Friend();
+        friendship.setUser(user);
+        friendship.setFriend(friendId);
+        friendship.setFriendshipStatus("waiting for approval");
+        
+        return friendship;
+    }
+
+    // return results based on percentage
+    @Override
+    public List<FacebookUser> searchForUsers(String search) 
+    {
+        List<FacebookUser> matchingUsers = new ArrayList<>();
+        List<FacebookUser> users = getAllUsers();
+        //String[] words = search.split(" ");
+        search = search.toLowerCase();
+        for(FacebookUser user : users)
+        {            
+            if(user.getFirstName().toLowerCase().contains(search) || user.getLastName().toLowerCase().contains(search))
+            {
+               matchingUsers.add(user);
+            }
+            
+        }
+        
+        
+        
+        
+        
+        
+        return matchingUsers;
+    }
+    private List<FacebookUser> getAllUsers()
+    {
+        return facebookUserFacade.findAll();
+    }
     
 }

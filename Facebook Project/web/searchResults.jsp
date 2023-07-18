@@ -86,8 +86,8 @@
                 <p>
                     Friend. Not yet working 
                 </p>
-                <form action="" method="">
-                    <button type="submit" value="<%=user.getId()%>">Add Friend</button>
+                <form action="AddFriendServlet.com" method="post">
+                    <button type="submit" name="friendId" value="<%=user.getId()%>">Add Friend</button>
                 </form>
             </div>
         </div>
