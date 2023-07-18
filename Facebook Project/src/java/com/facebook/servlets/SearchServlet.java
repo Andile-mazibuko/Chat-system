@@ -61,6 +61,7 @@ public class SearchServlet extends HttpServlet {
     throws ServletException, IOException 
     {
         HttpSession session = request.getSession();
+        FacebookUser user = (FacebookUser)session.getAttribute("user");
         String search = request.getParameter("search");
         
         session.setAttribute("searchResults", processor.searchForUsers(search) );

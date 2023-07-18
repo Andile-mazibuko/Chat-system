@@ -4,6 +4,8 @@
     Author     : andil
 --%>
 
+<%@page import="com.facebook.entities.Friend"%>
+<%@page import="java.util.List"%>
 <%@page import="com.facebook.entities.FacebookUser"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -22,6 +24,7 @@
     
     <%
         FacebookUser user = (FacebookUser)session.getAttribute("user");
+        List<Friend> friendRequests = (List<Friend>)session.getAttribute("friendRequests");
         String firstName = user.getFirstName();
         String lastName = user.getLastName();
     %>
@@ -514,12 +517,15 @@
                 </button>
         </div>
         <div class="hidden-content" style="height: 89%;">
+           <%for(Friend friendship: friendRequests){%>
             <div class="notification-container">
                 <div class="post-pp" style="position: absolute; left: 2%;">
                     <img src="user.png" alt="">
                 </div>
                 <div class="text">
-                    <b>Andile Mazibuko</b> sent you a friend request
+                    <%//tesing with an id%>
+                    <b><%=friendship.getUser()%>Andile Mazibuko</b> sent you a friend request
+                    
                     <br>
                     <i>8 weeks ago</i>
                     <form action="">
@@ -528,23 +534,10 @@
                     </form>
                 </div>
             </div>
+            <%}%>
             <!--
                 Second notification
             -->
-            <div class="notification-container">
-                <div class="post-pp" style="position: absolute; left: 2%;">
-                    <img src="user.png" alt="">
-                </div>
-                <div class="text">
-                    <b>Andile Mazibuko</b> sent you a friend request
-                    <br><br>
-                    <i>8 weeks ago</i>
-                    <form action="">
-                        <button type="submit" value="Confirm+id" name="request button" style="background-color: rgb(73, 119, 247);"><b>Confirm</b></button>
-                        <button type="submit" value="Delete+id" name="request button" ><b>Delete</b></button>
-                    </form>
-                </div>
-            </div>
             
         </div>
     </div>
