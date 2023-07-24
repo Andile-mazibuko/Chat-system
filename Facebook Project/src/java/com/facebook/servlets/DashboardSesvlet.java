@@ -7,6 +7,8 @@ package com.facebook.servlets;
 
 import com.facebook.entities.FacebookUser;
 import com.facebook.entities.Friend;
+import com.facebook.processor.Notification;
+import com.facebook.sessinbeans.FacebookUserFacadeLocal;
 import com.facebook.sessinbeans.FriendFacadeLocal;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -25,6 +27,9 @@ import javax.servlet.http.HttpSession;
 public class DashboardSesvlet extends HttpServlet {
 
     @EJB
+    private FacebookUserFacadeLocal facebookUserFacade;
+
+    @EJB
     private FriendFacadeLocal friendFacade;
 
    
@@ -39,15 +44,9 @@ public class DashboardSesvlet extends HttpServlet {
            
            List<Friend> friendRequests = new ArrayList<>();
            
-           for(Friend friendship : friends)
-           {
-               if(friendship.getFriend() == user.getId() && friendship.getFriendshipStatus().equalsIgnoreCase("waiting for approval"))
-               {
-                   friendRequests.add(friendship);
-               }
-           }
+           
             
-        session.setAttribute("friendRequests", friendRequests);
+        session.setAttribute("friendRequests", createNotifications(user, friends));
         request.getRequestDispatcher("dashboard.jsp").forward(request, response);
     }
 
@@ -58,5 +57,23 @@ public class DashboardSesvlet extends HttpServlet {
     
     }
     
-
+    private List<Notification> createNotifications(FacebookUser user,List<Friend> friends)
+    {
+        List<Notification> notifications = new ArrayList<>();
+        for(Friend friendship : friends)
+           {
+               if(friendship.getFriend() == user.getId() && friendship.getFriendshipStatus().equalsIgnoreCase("waiting for approval"))
+               {
+                   notifications.add(new Notification(findSender(friendship.getUser()).getFirstName(), findSender(friendship.getUser()).getLastName(), friendship.getId(), 0));
+               }
+           }
+        return notifications;
+    }
+    
+    private FacebookUser findSender(long id)
+    {
+        return facebookUserFacade.find(id);
+    }
+    
+    
 }
