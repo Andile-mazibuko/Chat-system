@@ -20,6 +20,10 @@
         <servlet-name>AddFriendServlet</servlet-name>
         <servlet-class>com.facebook.servlets.AddFriendServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ApproveOrDeleteFriend</servlet-name>
+        <servlet-class>com.facebook.servlets.ApproveOrDeleteFriend</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SignupServlet</servlet-name>
         <url-pattern>/SignupServlet.com</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>AddFriendServlet</servlet-name>
         <url-pattern>/AddFriendServlet.com</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ApproveOrDeleteFriend</servlet-name>
+        <url-pattern>/ApproveOrDeleteFriend.com</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

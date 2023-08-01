@@ -529,7 +529,7 @@
                     
                     <br>
                     <i>8 weeks ago</i>
-                    <form action="">
+                    <form action="ApproveOrDeleteFriend.com" method="post">
                         <button type="submit" value="Confirm:<%=notification.getOwnerId()%>" name="request button" style="background-color: rgb(73, 119, 247);"><b>Confirm</b></button>
                         <button type="submit" value="Delete:<%=notification.getOwnerId()%>" name="request button" ><b>Delete</b></button>
                     </form>
