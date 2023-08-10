@@ -285,148 +285,26 @@
         </div>
         <hr>
         <div class="friends">
-            <form action="">
+            <form action="" method="">
             
                 <!--Start-->
-                <button type="submit" class="user_msg_container">
+                
+                <%
+                    List<FacebookUser> userFriends = (List<FacebookUser>)session.getAttribute("userFriends");
+                    for(int i = 0; i < userFriends.size(); i++){
+                %>
+                <button type="submit" class="user_msg_container" value="<%=userFriends.get(i).getId()%>">
                     <div class="post-pp">
                         <img src="user.png" alt="">
                     </div> 
                     
                     <span class="msg_sender">
-                        <b>Andile Mazibuko</b>
+                        <b><%=userFriends.get(i).getFirstName()%> <%=userFriends.get(i).getLastName()%></b>
                     </span>
                 
                 </button>
-
+                <%}%>
                 
-                <button type="submit" class="user_msg_container">
-                    <div class="post-pp">
-                        <img src="user.png" alt="">
-                    </div> 
-                    
-                    <span class="msg_sender">
-                        <b>Andile Mazibuko</b>
-                    </span>
-                
-                </button>
-
-                
-                <button type="submit" class="user_msg_container">
-                    <div class="post-pp">
-                        <img src="user.png" alt="">
-                    </div> 
-                    
-                    <span class="msg_sender">
-                        <b>Andile Mazibuko</b>
-                    </span>
-                
-                </button>
-
-                
-                <button type="submit" class="user_msg_container">
-                    <div class="post-pp">
-                        <img src="user.png" alt="">
-                    </div> 
-                    
-                    <span class="msg_sender">
-                        <b>Andile Mazibuko</b>
-                    </span>
-                
-                </button>
-
-                
-                <button type="submit" class="user_msg_container">
-                    <div class="post-pp">
-                        <img src="user.png" alt="">
-                    </div> 
-                    
-                    <span class="msg_sender">
-                        <b>Andile Mazibuko</b>
-                    </span>
-                
-                </button>
-
-                
-                <button type="submit" class="user_msg_container">
-                    <div class="post-pp">
-                        <img src="user.png" alt="">
-                    </div> 
-                    
-                    <span class="msg_sender">
-                        <b>Andile Mazibuko</b>
-                    </span>
-                
-                </button>
-
-                
-                <button type="submit" class="user_msg_container">
-                    <div class="post-pp">
-                        <img src="user.png" alt="">
-                    </div> 
-                    
-                    <span class="msg_sender">
-                        <b>Andile Mazibuko</b>
-                    </span>
-                
-                </button>
-
-                
-                <button type="submit" class="user_msg_container">
-                    <div class="post-pp">
-                        <img src="user.png" alt="">
-                    </div> 
-                    
-                    <span class="msg_sender">
-                        <b>Andile Mazibuko</b>
-                    </span>
-
-                </button>
-
-                
-                <button type="submit" class="user_msg_container">
-                    <div class="post-pp">
-                        <img src="user.png" alt="">
-                    </div> 
-                    
-                    <span class="msg_sender">
-                        <b>Andile Mazibuko</b>
-                    </span>
-                
-                </button>
-                
-                <button type="submit" class="user_msg_container">
-                    <div class="post-pp">
-                        <img src="user.png" alt="">
-                    </div> 
-                    
-                    <span class="msg_sender">
-                        <b>Andile Mazibuko</b>
-                    </span>
-                
-                </button>
-                
-                <button type="submit" class="user_msg_container">
-                    <div class="post-pp">
-                        <img src="user.png" alt="">
-                    </div> 
-                    
-                    <span class="msg_sender">
-                        <b>Andile Mazibuko</b>
-                    </span>
-                
-                </button>
-                
-                <button type="submit" class="user_msg_container">
-                    <div class="post-pp">
-                        <img src="user.png" alt="">
-                    </div> 
-                    
-                    <span class="msg_sender">
-                        <b>Andile Mazibuko</b>
-                    </span>
-                
-                </button>
                 <!--The end-->
 
             </form>
