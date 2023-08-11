@@ -204,9 +204,9 @@
                 <hr>
             <div class="create-post-pp">
                 <img src="user.png" alt="">
-            </div><h2>Andile Mazibuko</h2> 
-            <form action="">
-                <input type="text" name="post-content" placeholder="What's on your mind, Andile?" class="post-cont">
+            </div><h2><%=firstName%> <%=lastName%></h2> 
+            <form action="PostServlet.com" method="post" enctype="multipart/form-data">
+                <input type="text" name="post-content" placeholder="What's on your mind, <%=firstName%>?" class="post-cont">
                 <input type="file" name="post-file" id="file" value="Upload Image">
                 <label for="file">Upload Image</label>
                 <button type="submit" value="">Post</button>

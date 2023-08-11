@@ -24,6 +24,10 @@
         <servlet-name>ApproveOrDeleteFriend</servlet-name>
         <servlet-class>com.facebook.servlets.ApproveOrDeleteFriend</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PostServlet</servlet-name>
+        <servlet-class>com.facebook.servlets.PostServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SignupServlet</servlet-name>
         <url-pattern>/SignupServlet.com</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>ApproveOrDeleteFriend</servlet-name>
         <url-pattern>/ApproveOrDeleteFriend.com</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PostServlet</servlet-name>
+        <url-pattern>/PostServlet.com</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

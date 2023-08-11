@@ -42,7 +42,7 @@ public class DashboardSesvlet extends HttpServlet {
         
            List<Friend> friends = friendFacade.findAll();
            
-           List<Friend> friendRequests = new ArrayList<>();
+           //List<Friend> friendRequests = new ArrayList<>();
            List<FacebookUser> userFriends = findFriends(friends, user);
            
         session.setAttribute("userFriends", userFriends);
@@ -75,20 +75,7 @@ public class DashboardSesvlet extends HttpServlet {
     {
         return facebookUserFacade.find(id);
     }
-   /* private List<Friend>findAllFriendships(Long id)
-    {
-        List<Friend> allFriends = friendFacade.findAll();
-        List<Friend> friends = new ArrayList<>();
-        
-        for(Friend friend : allFriends)
-        {
-            if(friend.getId().equals(id) && friend.getFriendshipStatus().equalsIgnoreCase("Friends"))
-            {
-                friends.add(friend);
-            }
-        }
-        return friends;
-    }*/
+
     private List<FacebookUser> findFriends(List<Friend>friends,FacebookUser fbUser)
     {
 
@@ -106,8 +93,5 @@ public class DashboardSesvlet extends HttpServlet {
         
         return users;
     }
-    private void addUser()
-    {
-        
-    }
+
 }
