@@ -64,18 +64,20 @@ public class PostServlet extends HttpServlet {
         byte[] postFile = new byte[is.available()];
         is.read(postFile);
         
-        Post post = makePost(caption, postFile);
+        Post post = makePost(caption, postFile,part.getSubmittedFileName());
+        System.out.println(post.getFileName());
         postFacade.create(post);
         
         response.sendRedirect("DashboardSesvlet.com");
     }
 
-    private Post makePost(String caption,byte[] file)
+    private Post makePost(String caption,byte[] file,String fileName)
     {
         Post post = new Post();
         post.setCaption(caption);
         post.setIsProfilePicture(false);
         post.setPostMedia(file);
+        post.setFileName(fileName);
         
         return post;
     }

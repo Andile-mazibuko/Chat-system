@@ -108,7 +108,7 @@ public class Post implements Serializable {
     }
 
     public void setFileName(String fileName) {
-        this.fileName = this.id+ ""+ fileName.substring(fileName.length()-3, fileName.length());
+        this.fileName = this.id+ ""+ fileName.substring(fileName.length()-4, fileName.length());
     }
     
     
