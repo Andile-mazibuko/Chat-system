@@ -30,6 +30,8 @@ public class Post implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    private String fileName;
+    
     @Column(name = "post_cation")
     private String caption;
     
@@ -99,6 +101,14 @@ public class Post implements Serializable {
 
     public void setPostlikes(List<Reaction> postlikes) {
         this.postlikes = postlikes;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = this.id+ ""+ fileName.substring(fileName.length()-3, fileName.length());
     }
     
     
