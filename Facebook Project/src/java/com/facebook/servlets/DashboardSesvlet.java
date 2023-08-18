@@ -7,9 +7,11 @@ package com.facebook.servlets;
 
 import com.facebook.entities.FacebookUser;
 import com.facebook.entities.Friend;
+import com.facebook.entities.Post;
 import com.facebook.processor.Notification;
 import com.facebook.sessinbeans.FacebookUserFacadeLocal;
 import com.facebook.sessinbeans.FriendFacadeLocal;
+import com.facebook.sessinbeans.PostFacadeLocal;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +29,9 @@ import javax.servlet.http.HttpSession;
 public class DashboardSesvlet extends HttpServlet {
 
     @EJB
+    private PostFacadeLocal postFacade;
+
+    @EJB
     private FacebookUserFacadeLocal facebookUserFacade;
 
     @EJB
@@ -41,12 +46,15 @@ public class DashboardSesvlet extends HttpServlet {
         FacebookUser user = (FacebookUser)session.getAttribute("user");
         
            List<Friend> friends = friendFacade.findAll();
-           
+           List<Post> posts = postFacade.findAll();
            //List<Friend> friendRequests = new ArrayList<>();
            List<FacebookUser> userFriends = findFriends(friends, user);
+        
            
+        session.setAttribute("posts", posts);
         session.setAttribute("userFriends", userFriends);
         session.setAttribute("friendRequests", createNotifications(user, friends));
+        
         request.getRequestDispatcher("dashboard.jsp").forward(request, response);
     
     }

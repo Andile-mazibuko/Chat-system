@@ -4,6 +4,10 @@
     Author     : andil
 --%>
 
+<%@page import="java.io.FileOutputStream"%>
+<%@page import="java.io.OutputStream"%>
+<%@page import="java.io.File"%>
+<%@page import="com.facebook.entities.Post"%>
 <%@page import="com.facebook.processor.Notification"%>
 <%@page import="com.facebook.entities.Friend"%>
 <%@page import="java.util.List"%>
@@ -25,6 +29,7 @@
     
     <%
         FacebookUser user = (FacebookUser)session.getAttribute("user");
+        List<Post>posts = (List<Post>)session.getAttribute("posts");
         List<Notification> friendRequests = (List<Notification>)session.getAttribute("friendRequests");
         String firstName = user.getFirstName();
         String lastName = user.getLastName();
@@ -215,7 +220,18 @@
         
         <div class="posts">
             <!--1st post-->
-            <%for(int i = 0; i < 10;i++){%>
+            <%
+                
+                for(int i = 0; i < posts.size() ;i++){
+            
+                File file = new File("D:/Files/projects/Git projects/Chat-system/Facebook Project/web/post/"+posts.get(i).getFileName());
+                file.createNewFile();
+                
+                OutputStream outputStream = new FileOutputStream(file);
+                outputStream.write(posts.get(i).getPostMedia());
+                outputStream.flush();
+                outputStream.close();
+            %>
             <div class="post pic" id="with_pic">
                 <div class="post-pp">
                     <img src="user.png" alt="">
@@ -228,7 +244,7 @@
                     9h ago
                 </div>
                 <div class="pic-area">
-                    <img src="IMG_20230217_012654.png" alt="">
+                    <img src="post/<%= posts.get(i).getFileName()%>" alt="">
                 </div>
                 <div class="post-summary">
                     <i class="fa-solid fa-thumbs-up" style="color: rgb(15, 15, 226);"></i>

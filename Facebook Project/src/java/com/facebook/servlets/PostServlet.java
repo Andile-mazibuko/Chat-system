@@ -65,7 +65,8 @@ public class PostServlet extends HttpServlet {
         is.read(postFile);
         
         Post post = makePost(caption, postFile,part.getSubmittedFileName());
-        System.out.println(post.getFileName());
+        //String fileName = part.getSubmittedFileName();
+        //post.setFileName( post.getId()+ ""+ fileName.substring(fileName.length()-4, fileName.length()));
         postFacade.create(post);
         
         response.sendRedirect("DashboardSesvlet.com");
