@@ -2,11 +2,12 @@
 {
     --backgroung : rgb(19, 19, 19);
     --fb_blue : rgb(73, 119, 247);
-    --header_color  : rgb(37, 37, 37);
+    --header_color  : rgb(32, 32, 32);
     --font-color : rgb(212, 209, 209);
     --user-icon : white;
     --user-background : rgba(179, 176, 176, 0.884); 
     --hover-color:  rgb(105, 105, 105);
+    --additional-grey : rgb(50, 50, 50);
 }
 
 .body

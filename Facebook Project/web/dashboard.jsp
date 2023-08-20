@@ -225,7 +225,7 @@
                 for(int i = 0; i < posts.size() ;i++){
             
                 File file = new File("D:/Files/projects/Git projects/Chat-system/Facebook Project/web/post/"+posts.get(i).getFileName());
-                file.createNewFile();
+                //file.createNewFile();
                 
                 OutputStream outputStream = new FileOutputStream(file);
                 outputStream.write(posts.get(i).getPostMedia());
